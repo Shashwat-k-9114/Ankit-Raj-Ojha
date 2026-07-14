@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ankit Raj Ojha — poet, editor, translator, and scholar. Author of Pinpricks; editor of Wives and The Bare Bones Book of Humour; doctoral research on Kurt Vonnegut; published across twenty countries.">
+<meta name="author" content="Ankit Raj Ojha">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1F3350">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ankit Raj Ojha — Poet · Editor · Translator · Scholar">
+<meta property="og:description" content="Poet, editor, translator, and scholar. Author of Pinpricks; editor of Wives and The Bare Bones Book of Humour; published across twenty countries.">
+<meta property="og:image" content="https://www.hawakal.com/wp-content/uploads/2022/06/Ankit-Front.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ankit Raj Ojha — Poet · Editor · Translator · Scholar">
+<meta name="twitter:description" content="Poet, editor, translator, and scholar, published across twenty countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@500;600&display=swap">
+<title>Ankit Raj Ojha — Poet · Editor · Translator · Scholar</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<style>
+:root{
+  --paper:#EFE8D8;
+  --paper-deep:#E4D9BE;
+  --ink:#1C1A17;
+  --ink-soft:#4A453C;
+  --navy:#1F3350;
+  --navy-deep:#152538;
+  --ochre:#C6862E;
+  --ochre-deep:#9C6A1F;
+  --rust:#A13D2C;
+  --line:#C9BEA0;
+  --line-on-navy:rgba(239,232,216,0.22);
+  --card:#F7F2E6;
+  --radius:2px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; overflow-x:hidden;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Newsreader', serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--ochre); color:var(--navy-deep);}
+a{color:inherit;}
+img{max-width:100%; display:block;}
+
+/* ---------- PAPER GRAIN (subtle, almost invisible) ---------- */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:0.035;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- CUSTOM CURSOR (subtle ink dot, desktop only) ---------- */
+.ink-cursor{
+  position:fixed;
+  top:0; left:0;
+  width:7px; height:7px;
+  border-radius:50%;
+  background:var(--rust);
+  opacity:0;
+  pointer-events:none;
+  z-index:999;
+  transform:translate(-50%,-50%);
+  transition:opacity .25s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .ink-cursor{opacity:0.5;}
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+h1,h2,h3,h4{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  margin:0;
+  color:var(--navy);
+  text-wrap:balance;
+}
+p{text-wrap:pretty;}
+
+.container{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 32px;
+}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(239,232,216,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1120px;
+  margin:0 auto;
+  padding:16px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+.nav-mark{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:19px;
+  color:var(--navy);
+  text-decoration:none;
+  white-space:nowrap;
+}
+.nav-mark span{color:var(--rust); font-style:italic;}
+.nav-links{
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0; padding:0;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+.nav-links a{
+  text-decoration:none;
+  color:var(--ink-soft);
+  border-bottom:1px solid transparent;
+  padding-bottom:3px;
+  transition:color .15s, border-color .15s;
+}
+.nav-links a:hover{color:var(--rust); border-color:var(--rust);}
+.nav-toggle{display:none; background:none; border:1px solid var(--ink); font-family:'IBM Plex Mono',monospace; font-size:11px; padding:6px 10px; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; color:var(--ink);}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:var(--navy);
+  color:var(--paper);
+  overflow:hidden;
+  padding:110px 0 90px;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(239,232,216,0.045) 0px, rgba(239,232,216,0.045) 1px, transparent 1px, transparent 34px),
+    repeating-linear-gradient(90deg, rgba(239,232,216,0.03) 0px, rgba(239,232,216,0.03) 1px, transparent 1px, transparent 34px);
+  pointer-events:none;
+}
+.hero-inner{position:relative; max-width:1120px; margin:0 auto; padding:0 32px;}
+.hero .eyebrow{color:var(--ochre); margin-bottom:22px; display:flex; align-items:center; gap:12px;}
+.hero .eyebrow::before{content:""; width:34px; height:1px; background:var(--ochre); display:inline-block;}
+.hero h1{
+  color:var(--paper);
+  font-size:clamp(44px, 8vw, 92px);
+  line-height:0.98;
+  font-weight:600;
+  max-width:14ch;
+}
+.hero h1 em{
+  font-style:italic;
+  font-weight:500;
+  color:var(--paper);
+  opacity:0.55;
+}
+.hero-sub{
+  margin-top:26px;
+  max-width:52ch;
+  font-size:19px;
+  color:rgba(239,232,216,0.82);
+  font-style:italic;
+}
+.hero-stats{
+  margin-top:56px;
+  display:grid;
+  grid-template-columns:repeat(4, auto);
+  gap:0;
+  border-top:1px solid var(--line-on-navy);
+}
+.hero-stat{
+  padding:20px 26px 0 0;
+  border-right:1px solid var(--line-on-navy);
+}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .num{
+  font-family:'Fraunces', serif;
+  font-size:34px;
+  color:var(--ochre);
+  font-weight:600;
+}
+.hero-stat .lbl{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(239,232,216,0.6);
+  margin-top:4px;
+}
+
+/* ---------- CINEMATIC HERO INTRO (runs once, signature intro only) ---------- */
+.hero-intro{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  background:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:opacity 1.1s ease, visibility 1.1s ease;
+}
+.hero-intro.hero-intro-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.hero-intro-line{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:clamp(18px, 3vw, 26px);
+  color:var(--ink-soft);
+  letter-spacing:0.02em;
+  min-height:1.4em;
+}
+.hero-intro-name{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(30px, 5vw, 52px);
+  color:var(--navy);
+  margin-top:8px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+.hero-intro-name.is-visible{opacity:1; transform:translateY(0);}
+.hero-intro-roles{
+  margin-top:18px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--rust);
+  opacity:0;
+  transition:opacity 1.2s ease;
+}
+.hero-intro-roles.is-visible{opacity:1;}
+.hero-intro-cursor{
+  display:inline-block;
+  width:2px;
+  height:1em;
+  background:var(--ink);
+  margin-left:2px;
+  vertical-align:middle;
+  animation:hero-blink 0.9s steps(1) infinite;
+}
+@keyframes hero-blink{
+  0%, 49%{opacity:1;}
+  50%, 100%{opacity:0;}
+}
+.hero-content{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity 1.1s ease, transform 1.1s ease;
+}
+.hero-content.is-visible{opacity:1; transform:translateY(0);}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:132px 0;}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:24px;
+  margin-bottom:60px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:24px;
+}
+.section-head .eyebrow{color:var(--rust); margin-bottom:10px;}
+.section-head h2{font-size:clamp(28px, 4vw, 42px);}
+.section-head .count{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  white-space:nowrap;
+  padding-bottom:6px;
+}
+
+/* ---------- CHAPTER MARKERS (running header, book-style numbering) ---------- */
+body{counter-reset:chapter;}
+section:not(.recognition){counter-increment:chapter; position:relative;}
+section:not(.recognition)::after{
+  content:"— 0" counter(chapter) " —";
+  position:absolute;
+  top:46px;
+  right:32px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:.1em;
+  color:var(--line);
+  pointer-events:none;
+}
+.author-note::after{color:rgba(239,232,216,0.32);}
+@media (max-width:860px){
+  section:not(.recognition)::after{display:none;}
+}
+
+/* ---------- ABOUT ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:60px;
+  align-items:start;
+}
+.monogram{
+  width:180px; height:180px;
+  border-radius:50%;
+  background:var(--navy);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  color:var(--ochre);
+  font-size:58px;
+  border:1px solid var(--navy-deep);
+  position:relative;
+}
+.monogram::after{
+  content:"";
+  position:absolute; inset:-10px;
+  border:1px dashed var(--line);
+  border-radius:50%;
+}
+.about-text{max-width:72ch;}
+.about-text p{margin:0 0 18px; color:var(--ink-soft); font-size:17.5px;}
+.about-text p:first-child{
+  font-size:21px;
+  color:var(--ink);
+  font-family:'Newsreader', serif;
+}
+.facts{
+  margin-top:36px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 40px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.fact{display:flex; gap:12px; font-size:15px;}
+.fact .k{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--rust);
+  min-width:108px;
+  padding-top:2px;
+}
+.fact .v{color:var(--ink-soft);}
+
+/* ---------- BOOKS ---------- */
+.books-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+  perspective:1400px;
+  padding-bottom:26px;
+  border-bottom:6px solid var(--ink);
+  box-shadow:0 10px 16px -10px rgba(28,26,23,0.35);
+}
+.book{
+  background:var(--ink);
+  border-radius:var(--radius);
+  aspect-ratio:2/3;
+  position:relative;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 14px 30px -12px rgba(28,26,23,0.4);
+  transition:transform .5s cubic-bezier(.19,1,.22,1), box-shadow .5s ease;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.book:hover{
+  transform:translateY(-10px) rotateX(4deg) rotateY(-6deg);
+  box-shadow:-20px 28px 40px -18px rgba(28,26,23,0.5);
+}
+.book:active{transform:translateY(-6px) rotateX(2deg) rotateY(-3deg) scale(0.99);}
+.book::before{
+  content:"";
+  position:absolute; left:0; top:0; bottom:0; width:10px;
+  background:rgba(0,0,0,0.25);
+}
+.book-1{background:linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);}
+.book-2{background:linear-gradient(155deg, var(--rust) 0%, #7a2c1f 100%);}
+.book-3{background:linear-gradient(155deg, var(--ochre-deep) 0%, #7a5116 100%);}
+.book-eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(239,232,216,0.65);
+}
+.book-title{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:30px;
+  color:var(--paper);
+  line-height:1.08;
+  margin-top:14px;
+}
+.book-meta{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:rgba(239,232,216,0.7);
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid rgba(239,232,216,0.25);
+  padding-top:12px;
+}
+.book-desc{
+  font-family:'Newsreader', serif;
+  font-size:14.5px;
+  color:rgba(239,232,216,0.85);
+  margin-top:12px;
+  flex-grow:1;
+}
+
+/* ---------- RECOGNITION STRIP ---------- */
+.recognition{
+  background:var(--card);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.rec-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:0;
+}
+.rec-item{
+  padding:34px 28px;
+  border-right:1px solid var(--line);
+}
+.rec-item:last-child{border-right:none;}
+.rec-item .yr{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--rust);
+  letter-spacing:.06em;
+}
+.rec-item h4{
+  font-size:18px;
+  margin-top:8px;
+  line-height:1.25;
+}
+.rec-item p{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin:8px 0 0;
+}
+
+/* ---------- BIBLIOGRAPHY ---------- */
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:34px;
+}
+.filter-btn{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  background:transparent;
+  border:1px solid var(--ink);
+  color:var(--ink);
+  padding:8px 16px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.filter-btn:hover{border-color:var(--rust); color:var(--rust);}
+.filter-btn.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  gap:16px;
+}
+.pub-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 22px 20px;
+  position:relative;
+  transition:border-color .3s ease, transform .35s cubic-bezier(.19,1,.22,1), box-shadow .35s ease;
+  box-shadow:0 1px 0 var(--line);
+}
+.pub-card::before{
+  content:"";
+  position:absolute;
+  top:12px; left:12px;
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+}
+.pub-index{
+  position:absolute;
+  top:15px; right:18px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9.5px;
+  color:var(--line);
+  letter-spacing:.05em;
+}
+.pub-card:hover{
+  border-color:var(--rust);
+  transform:translateY(-3px) rotate(-0.3deg);
+  box-shadow:0 12px 24px -16px rgba(28,26,23,0.4);
+}
+.pub-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  padding-left:14px;
+}
+.pub-tag{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--rust);
+  border:1px solid var(--rust);
+  padding:2px 7px;
+  border-radius:10px;
+  white-space:nowrap;
+}
+.pub-year{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--ink-soft);
+}
+.pub-title{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:17.5px;
+  margin-top:10px;
+  color:var(--ink);
+  line-height:1.3;
+  padding-left:14px;
+}
+.pub-venue{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-top:6px;
+  padding-left:14px;
+}
+.pub-venue .country{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  color:var(--ochre-deep);
+}
+.pub-link{
+  display:inline-block;
+  margin-top:10px;
+  margin-left:14px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  text-decoration:none;
+  color:var(--navy);
+  border-bottom:1px solid var(--navy);
+}
+.pub-link:hover{color:var(--rust); border-color:var(--rust);}
+
+/* ---------- ACADEMIC ---------- */
+.academic-intro{
+  max-width:68ch;
+  color:var(--ink-soft);
+  font-size:17px;
+  margin-bottom:40px;
+}
+.academic-intro strong{color:var(--ink); font-weight:600;}
+.tags-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;}
+.tag-chip{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--navy);
+  background:rgba(31,51,80,0.08);
+  padding:5px 12px;
+  border-radius:14px;
+}
+.pub-table{width:100%; border-collapse:collapse; margin-top:8px;}
+.pub-table th{
+  text-align:left;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--rust);
+  padding:0 14px 12px 0;
+  border-bottom:1px solid var(--ink);
+}
+.pub-table td{
+  padding:16px 14px 16px 0;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+  font-size:15px;
+}
+.pub-table tr:last-child td{border-bottom:none;}
+.pt-title{font-family:'Newsreader', serif; font-style:italic; color:var(--ink); max-width:38ch;}
+.pt-venue{color:var(--ink-soft); font-size:13.5px;}
+.pt-year{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft); white-space:nowrap;}
+.pt-cite{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--navy); text-align:right; white-space:nowrap;}
+
+/* ---------- EDITORIAL ROLES ---------- */
+.roles-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.role-card{
+  background:var(--paper);
+  padding:30px 26px;
+}
+.role-card .eyebrow{color:var(--ochre-deep); margin-bottom:10px;}
+.role-card h4{font-size:19px; line-height:1.3;}
+.role-card p{font-size:14.5px; color:var(--ink-soft); margin-top:10px;}
+
+/* ---------- PRESS / INTERVIEWS ---------- */
+.press-list{display:flex; flex-direction:column;}
+.press-item{
+  display:grid;
+  grid-template-columns:110px 1fr auto;
+  gap:24px;
+  align-items:baseline;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+.press-item:first-child{border-top:1px solid var(--line);}
+.press-date{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--rust);}
+.press-title{font-family:'Fraunces', serif; font-size:19px; font-weight:500; color:var(--ink);}
+.press-outlet{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); margin-top:4px;}
+.press-link{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  text-decoration:none;
+  color:var(--navy);
+  border-bottom:1px solid var(--navy);
+  white-space:nowrap;
+}
+.press-link:hover{color:var(--rust); border-color:var(--rust);}
+
+/* ---------- CONTACT / FOOTER ---------- */
+.contact{
+  background:var(--navy-deep);
+  color:var(--paper);
+}
+.contact-inner{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+}
+.contact h2{color:var(--paper); font-size:clamp(30px,5vw,48px); max-width:12ch;}
+.contact-sub{color:rgba(239,232,216,0.7); margin-top:18px; max-width:44ch; font-style:italic;}
+.contact-email{
+  display:inline-block;
+  margin-top:34px;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:22px;
+  color:var(--ochre);
+  text-decoration:none;
+  border-bottom:1px solid var(--ochre);
+  padding-bottom:4px;
+}
+.social-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0;}
+.social-list li{border-top:1px solid var(--line-on-navy);}
+.social-list li:last-child{border-bottom:1px solid var(--line-on-navy);}
+.social-list a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 4px;
+  text-decoration:none;
+  color:var(--paper);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  letter-spacing:.04em;
+}
+.social-list a .arrow{color:var(--ochre); transition:transform .15s;}
+.social-list a:hover .arrow{transform:translateX(6px);}
+.social-list .handle{color:rgba(239,232,216,0.64);}
+
+.footer-bottom{
+  border-top:1px solid var(--line-on-navy);
+  margin-top:70px;
+  padding-top:24px;
+  display:flex;
+  justify-content:space-between;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:rgba(239,232,216,0.5);
+}
+
+/* ---------- SCROLL REVEALS (paragraph / section-level only, never per-letter) ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .8s cubic-bezier(.2,.6,.2,1), transform .8s cubic-bezier(.2,.6,.2,1);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ---------- MICROINTERACTIONS ---------- */
+.filter-btn:active{transform:scale(0.96);}
+.nav-toggle:active{transform:scale(0.96);}
+.pub-card:active{transform:scale(0.99);}
+.social-list a{transition:padding-left .25s ease, color .2s ease;}
+.social-list a:hover{padding-left:6px;}
+
+/* ---------- GALLERY (reserved for a future dedicated page — not populated yet) ---------- */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+  gap:20px;
+}
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--card);
+  aspect-ratio:4/5;
+}
+.gallery-item img{
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:grayscale(0.15) sepia(0.08);
+  transition:transform .6s cubic-bezier(.19,1,.22,1);
+}
+.gallery-item:hover img{transform:scale(1.04);}
+.gallery-caption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:14px 16px;
+  background:linear-gradient(0deg, rgba(28,26,23,0.75), transparent);
+  color:var(--paper);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px){
+  .nav-links{position:fixed; top:64px; left:0; right:0; background:var(--paper); flex-direction:column; padding:20px 32px; border-bottom:1px solid var(--line); display:none; gap:16px;}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:block;}
+  .hero{padding:80px 0 60px;}
+  .hero-stats{grid-template-columns:repeat(2,1fr); row-gap:22px;}
+  .about-grid{grid-template-columns:1fr;}
+  .facts{grid-template-columns:1fr;}
+  .books-grid{grid-template-columns:1fr; max-width:340px; margin:0 auto;}
+  .rec-grid{grid-template-columns:1fr 1fr;}
+  .rec-item{border-right:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .roles-grid{grid-template-columns:1fr;}
+  .contact-inner{grid-template-columns:1fr; gap:40px;}
+  .press-item{grid-template-columns:1fr; gap:6px;}
+  .pub-table{font-size:13px;}
+  .pt-title{max-width:none;}
+  .card-grid{grid-template-columns:repeat(auto-fill, minmax(min(300px, 100%), 1fr));}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important; animation:none !important;}
+  .reveal{opacity:1; transform:none;}
+  .hero-content{opacity:1; transform:none;}
+  .hero-intro{display:none;}
+}
+
+/* ================= STAGE 2: ATMOSPHERE & EDITORIAL RHYTHM ================= */
+
+/* ---- Vertical rhythm refinements (cascade override, same selectors) ---- */
+section{padding:168px 0;}
+.section-head{margin-bottom:84px; padding-bottom:30px;}
+.about-grid{gap:72px;}
+.about-text p{margin:0 0 24px;}
+.hero{padding:130px 0 108px;}
+.hero-stats{margin-top:68px;}
+.roles-grid{gap:1px;}
+.role-card{padding:38px 30px;}
+
+/* ---- Book-style drop caps (pure CSS, no markup touched) ---- */
+.about-text p:first-child::first-letter,
+.academic-intro::first-letter{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:2.5em;
+  line-height:0.75;
+  color:var(--ochre-deep);
+  float:left;
+  padding-right:9px;
+  padding-top:5px;
+}
+
+/* ---- Chapter divider ornament (restrained, reused between sections) ---- */
+.chapter-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:0;
+  height:1px;
+}
+.chapter-divider .rule{
+  flex:1;
+  max-width:180px;
+  height:1px;
+  background:var(--line);
+}
+.chapter-divider .mark{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--line);
+  letter-spacing:0.04em;
+}
+.chapter-divider.on-navy .rule{background:var(--line-on-navy);}
+.chapter-divider.on-navy .mark{color:rgba(239,232,216,0.35);}
+
+/* ---- Author's Note (opening-page treatment) ---- */
+.author-note{
+  background:var(--navy);
+  color:rgba(239,232,216,0.92);
+  padding:200px 0;
+}
+.author-note-inner{
+  max-width:66ch;
+  margin:0 auto;
+  text-align:left;
+}
+.author-note-eyebrow{
+  color:var(--ochre);
+  text-align:center;
+  margin-bottom:52px;
+}
+.author-note-text{
+  font-family:'Newsreader', serif;
+  font-style:italic;
+  font-size:clamp(20px, 2.6vw, 26px);
+  line-height:1.7;
+  color:rgba(239,232,216,0.88);
+}
+.author-note-text::first-letter{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:3.4em;
+  line-height:0.7;
+  color:var(--ochre);
+  float:left;
+  padding-right:12px;
+  padding-top:8px;
+}
+.author-note-sign{
+  margin-top:40px;
+  text-align:right;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:16px;
+  color:rgba(239,232,216,0.55);
+}
+
+/* ---- Career timeline (horizontal, minimal) ---- */
+.timeline-wrap{padding:0;}
+.timeline-label{
+  text-align:center;
+  color:var(--rust);
+  margin-bottom:46px;
+}
+.timeline{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:0;
+}
+.timeline-stage{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(16px, 2.2vw, 22px);
+  color:var(--ink-soft);
+  padding:0 22px;
+  white-space:nowrap;
+}
+.timeline-stage.is-current{color:var(--navy); font-weight:600;}
+.timeline-arrow{
+  color:var(--line);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  padding:0 2px;
+}
+@media (max-width:700px){
+  .timeline{flex-direction:column; gap:14px;}
+  .timeline-arrow{transform:rotate(90deg); padding:2px 0;}
+}
+
+/* ---- Selected Works (curated, quiet) ---- */
+.selected-works-intro{
+  max-width:56ch;
+  color:var(--ink-soft);
+  font-size:16.5px;
+  font-style:italic;
+  margin-bottom:52px;
+}
+.selected-works-list{
+  display:flex;
+  flex-direction:column;
+}
+.selected-work{
+  display:grid;
+  grid-template-columns:90px 1fr auto;
+  gap:28px;
+  align-items:baseline;
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.selected-work:first-child{border-top:1px solid var(--line);}
+.selected-work-year{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--rust);
+}
+.selected-work-title{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:20px;
+  color:var(--ink);
+}
+.selected-work-venue{
+  display:block;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  margin-top:5px;
+  font-style:normal;
+}
+.selected-work-note{
+  font-size:13.5px;
+  color:var(--ink-soft);
+  text-align:right;
+  max-width:26ch;
+  font-style:italic;
+}
+.selected-works-more{
+  margin-top:40px;
+  text-align:center;
+}
+.selected-works-more a{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--navy);
+  border-bottom:1px solid var(--navy);
+  padding-bottom:3px;
+}
+.selected-works-more a:hover{color:var(--rust); border-color:var(--rust);}
+@media (max-width:700px){
+  .selected-work{grid-template-columns:1fr; gap:6px;}
+  .selected-work-note{text-align:left; max-width:none;}
+}
+
+/* ---- Inline links inside Selected Works titles (consistent with .pub-link styling) ---- */
+.selected-work-title a{
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+}
+.selected-work-title a:hover{color:var(--rust); border-color:var(--rust);}
+
+/* ---- Book cards with real cover art (additive modifier on .book, no renames) ---- */
+.book.has-cover{
+  text-decoration:none;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.book.has-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:linear-gradient(180deg, rgba(28,26,23,0.05) 0%, rgba(28,26,23,0.55) 55%, rgba(28,26,23,0.92) 100%);
+  pointer-events:none;
+}
+.book.has-cover > div, .book.has-cover > .book-meta{
+  position:relative;
+  z-index:1;
+}
+
+/* ---- Contact: closing-page treatment ---- */
+.contact-close-mark{
+  text-align:center;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--ochre);
+  opacity:0.7;
+  margin-bottom:54px;
+}
+.contact-epigraph{
+  max-width:44ch;
+  color:rgba(239,232,216,0.6);
+  font-style:italic;
+  font-size:15px;
+  margin-top:18px;
+  border-left:2px solid rgba(239,232,216,0.2);
+  padding-left:16px;
+}
+
+/* ---- Tablet rhythm correction (768/820/1024 sit between the desktop and phone tunings) ---- */
+@media (max-width:1024px){
+  section{padding:118px 0;}
+  .author-note{padding:140px 0;}
+  .section-head{margin-bottom:64px; padding-bottom:24px;}
+}
+
+/* ---- Mobile rhythm correction (section padding was tuned for desktop only) ---- */
+@media (max-width:700px){
+  section{padding:88px 0;}
+  .author-note{padding:104px 0;}
+  .section-head{margin-bottom:52px; padding-bottom:20px;}
+}
+
+/* ---- Academic table: stacked treatment below 700px (existing classes only, no markup change) ---- */
+@media (max-width:700px){
+  .pub-table, .pub-table tbody, .pub-table tr, .pub-table td{display:block; width:100%;}
+  .pub-table thead{display:none;}
+  .pub-table tr{padding:22px 0; border-bottom:1px solid var(--line);}
+  .pub-table td{border-bottom:none; padding:3px 0;}
+  .pt-title{max-width:none; font-size:16.5px;}
+  .pt-venue{font-size:12.5px;}
+  .pt-year{font-size:11.5px;}
+  .pt-cite{text-align:left; font-size:11.5px;}
+  .pt-cite:not(:empty)::before{content:"Cited "; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;}
+}
+
+/* ================= STAGE 3: THE STUDY — GSAP / THREE.JS LAYER (additive only, no prior rules touched) ================= */
+
+/* ---- Reading ribbon (a physical bookmark tracking your place, not a "progress bar") ---- */
+.reading-ribbon{
+  position:fixed;
+  top:0; right:38px;
+  width:10px;
+  height:min(62vh, 480px);
+  background:linear-gradient(180deg, var(--rust) 0%, var(--ochre-deep) 100%);
+  z-index:200;
+  transform-origin:top center;
+  transform:scaleY(0);
+  transition:transform .25s cubic-bezier(.2,.6,.2,1);
+  box-shadow:0 2px 6px rgba(28,26,23,0.25);
+  pointer-events:none;
+  will-change:transform;
+}
+.reading-ribbon::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-9px;
+  height:0; width:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:9px solid var(--ochre-deep);
+}
+@media (max-width:860px){ .reading-ribbon{right:16px; width:7px;} }
+@media (prefers-reduced-motion: reduce){ .reading-ribbon{display:none;} }
+
+/* ---- Hero dust / atmosphere canvas (Three.js target — sits between the ruled backdrop and the copy) ---- */
+.hero-dust-canvas{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 2.4s ease;
+}
+.hero-dust-canvas.is-live{opacity:1;}
+.hero-inner{z-index:2;}
+
+/* ---- Chapter headings emerging like printed ink (GSAP-driven clip-path wipe) ---- */
+.section-head h2{
+  clip-path:inset(0 100% 0 0);
+}
+.section-head.ink-in h2{
+  clip-path:inset(0 0 0 0);
+  transition:clip-path 1.15s cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-reduced-motion: reduce){
+  .section-head h2{clip-path:none;}
+}
+
+/* ---- Books lifting from the shelf (overrides the generic .reveal start-state for .book only) ---- */
+.book.reveal{
+  transform:translateY(46px) rotate(-2.5deg) scale(0.94);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1);
+}
+.book.reveal.is-visible{
+  transform:translateY(0) rotate(0deg) scale(1);
+}
+.book:nth-child(2).reveal{transition-delay:.12s;}
+.book:nth-child(3).reveal{transition-delay:.24s;}
+
+/* ---- Folded page corner on bibliography cards (paper, not plastic) ---- */
+.pub-card::after{
+  content:"";
+  position:absolute;
+  top:0; right:0;
+  width:0; height:0;
+  border-style:solid;
+  border-width:0 16px 16px 0;
+  border-color:transparent var(--paper) transparent transparent;
+  filter:drop-shadow(-1px 1px 1px rgba(28,26,23,0.18));
+  transition:border-width .25s ease;
+}
+.pub-card:hover::after{border-width:0 20px 20px 0;}
+
+/* ---- Cursor becomes a fountain pen nib, with a faint trailing bead of ink ---- */
+.ink-cursor{
+  width:0; height:0;
+  background:none;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:12px solid var(--rust);
+  border-radius:0;
+  transform:translate(-50%,-15%) rotate(-40deg);
+}
+.ink-trail{
+  position:fixed;
+  top:0; left:0;
+  width:4px; height:4px;
+  border-radius:50%;
+  background:var(--ochre-deep);
+  opacity:0;
+  pointer-events:none;
+  z-index:998;
+  transform:translate(-50%,-50%);
+  transition:opacity .4s ease;
+}
+@media (hover:hover) and (pointer:fine){ .ink-trail{opacity:0.3;} }
+
+/* ---- Timeline stages unfold in sequence (initial state; GSAP animates to visible) ---- */
+.timeline-stage, .timeline-arrow{
+  opacity:0;
+  transform:translateY(8px);
+}
+.timeline.is-unfolded .timeline-stage,
+.timeline.is-unfolded .timeline-arrow{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .6s ease, transform .6s ease;
+}
+@media (prefers-reduced-motion: reduce){
+  .timeline-stage, .timeline-arrow{opacity:1; transform:none;}
+}
+
+/* ---- Wax seal closing mark (Finis) ---- */
+.finis-seal{
+  width:64px; height:64px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #b8492f, var(--rust) 55%, #7a2c1f 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:11px;
+  letter-spacing:.06em;
+  color:rgba(239,232,216,0.85);
+  box-shadow:0 6px 14px -6px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.15), inset 0 -3px 6px rgba(0,0,0,0.35);
+  transform:rotate(-8deg);
+}
+
+/* ================= STAGE 4: DEEPER IMMERSION — additive only, nothing above this line touched ================= */
+
+/* ---- Ink bloom veil (Three.js target, sits above the hero-intro, fades once) ---- */
+.ink-bloom-canvas{
+  position:absolute;
+  inset:0;
+  z-index:6;
+  pointer-events:none;
+  opacity:1;
+  transition:opacity 1s ease;
+}
+.ink-bloom-canvas.is-done{opacity:0;}
+@media (prefers-reduced-motion: reduce){ .ink-bloom-canvas{display:none;} }
+
+/* ---- Handmade paper texture, layered inside the hero only (independent of the existing ruled ::before) ---- */
+.hero-paper-texture{
+  position:absolute; inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.09' numOctaves='3' seed='7'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23f)'/></svg>");
+}
+
+/* ---- Global drifting atmosphere: a handful of soft motes across the whole page, not just the hero ---- */
+.atmosphere-layer{
+  position:fixed; inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:0.5;
+}
+.atmosphere-layer span{
+  position:absolute;
+  width:3px; height:3px;
+  border-radius:50%;
+  background:var(--ochre-deep);
+  opacity:0.18;
+  animation:motes-drift linear infinite;
+}
+.atmosphere-layer span:nth-child(1){top:8%; left:12%; animation-duration:38s; animation-delay:-4s;}
+.atmosphere-layer span:nth-child(2){top:24%; left:78%; animation-duration:46s; animation-delay:-14s;}
+.atmosphere-layer span:nth-child(3){top:52%; left:34%; animation-duration:52s; animation-delay:-2s;}
+.atmosphere-layer span:nth-child(4){top:68%; left:88%; animation-duration:40s; animation-delay:-22s;}
+.atmosphere-layer span:nth-child(5){top:84%; left:18%; animation-duration:48s; animation-delay:-9s;}
+.atmosphere-layer span:nth-child(6){top:38%; left:60%; animation-duration:44s; animation-delay:-30s;}
+@keyframes motes-drift{
+  0%{transform:translate(0,0);}
+  50%{transform:translate(18px,-140px);}
+  100%{transform:translate(0,-280px);}
+}
+@media (max-width:700px), (prefers-reduced-motion: reduce){ .atmosphere-layer{display:none;} }
+
+/* ---- Paper breathing: the whole page inhales, almost imperceptibly ----
+       (runs as opacity on the fixed foxing overlay rather than filter on
+       body — same visible effect, without forcing a repaint of the entire
+       document on every frame) ---- */
+.foxing-layer{animation:paper-breathe 26s ease-in-out infinite; will-change:opacity;}
+@keyframes paper-breathe{
+  0%, 100%{opacity:0.5;}
+  50%{opacity:0.56;}
+}
+@media (prefers-reduced-motion: reduce){ .foxing-layer{animation:none;} }
+
+/* ---- Aged paper imperfections: foxing spots, fixed and faint ---- */
+.foxing-layer{
+  position:fixed; inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:0.5;
+  background-image:
+    radial-gradient(circle at 6% 18%, rgba(156,106,31,0.10) 0, transparent 2.4%),
+    radial-gradient(circle at 92% 12%, rgba(156,106,31,0.08) 0, transparent 1.8%),
+    radial-gradient(circle at 82% 74%, rgba(161,61,44,0.07) 0, transparent 2%),
+    radial-gradient(circle at 14% 86%, rgba(156,106,31,0.09) 0, transparent 2.2%),
+    radial-gradient(ellipse at 50% 0%, rgba(28,26,23,0.05), transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(28,26,23,0.06), transparent 60%);
+}
+
+/* ---- Ink bleed halo behind chapter-divider marks ---- */
+.chapter-divider .mark{position:relative;}
+.chapter-divider .mark::before{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  width:46px; height:46px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(161,61,44,0.14) 0%, transparent 68%);
+  filter:blur(2px);
+  z-index:-1;
+}
+
+/* ---- Books: page thickness, spine depth, bookmark ribbon, cover-open on hover ---- */
+.book-pages{
+  position:absolute;
+  top:5px; right:-4px; bottom:5px;
+  width:7px;
+  z-index:1;
+  background:repeating-linear-gradient(180deg, #EFE8D8 0px, #EFE8D8 2px, #DCD1B2 2px, #DCD1B2 3px);
+  border-radius:0 2px 2px 0;
+  box-shadow:2px 0 4px rgba(28,26,23,0.35);
+  transition:width .5s cubic-bezier(.19,1,.22,1), transform .5s cubic-bezier(.19,1,.22,1);
+  transform-origin:left center;
+}
+.book-ribbon{
+  position:absolute;
+  top:-7px; left:28px;
+  width:11px; height:38px;
+  z-index:1;
+  background:linear-gradient(180deg, var(--ochre) 0%, var(--ochre-deep) 100%);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  box-shadow:0 3px 5px rgba(28,26,23,0.3);
+  transition:transform .5s cubic-bezier(.19,1,.22,1);
+  transform-origin:top center;
+}
+.book:hover .book-pages{width:10px; transform:translateX(1px);}
+.book:hover .book-ribbon{transform:translateY(3px) rotate(-2deg);}
+.book:hover{box-shadow:-24px 30px 44px -18px rgba(28,26,23,0.55), inset 40px 0 60px -50px rgba(0,0,0,0.5);}
+
+/* ---- Discoveries: margin notes, coffee ring, library stamp, pressed flower ---- */
+.margin-note{
+  position:absolute;
+  font-family:'Caveat', cursive;
+  font-size:19px;
+  color:var(--rust);
+  opacity:0.72;
+  line-height:1.15;
+  pointer-events:none;
+  transform:rotate(-4deg);
+}
+.margin-note::after{
+  content:"";
+  position:absolute; left:-4px; right:-6px; bottom:-3px;
+  height:6px;
+  border-bottom:1.5px dashed rgba(161,61,44,0.45);
+}
+.coffee-ring{
+  position:absolute;
+  width:86px; height:86px;
+  border-radius:50%;
+  border:2.5px solid rgba(120,78,32,0.14);
+  box-shadow:0 0 0 5px rgba(120,78,32,0.045), inset 0 0 10px rgba(120,78,32,0.06);
+  pointer-events:none;
+}
+.library-stamp{
+  position:absolute;
+  width:118px; height:118px;
+  border:2px solid rgba(31,51,80,0.4);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(31,51,80,0.45);
+  transform:rotate(-14deg);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+}
+.library-stamp::before{
+  content:"";
+  position:absolute; inset:6px;
+  border:1px dashed rgba(31,51,80,0.35);
+  border-radius:50%;
+}
+.pressed-flower{
+  position:absolute;
+  width:58px; height:58px;
+  opacity:0.5;
+  pointer-events:none;
+  transform:rotate(8deg);
+}
+
+/* ---- Closing page: footer becomes the last leaf of the book ---- */
+.contact{position:relative;}
+.contact::before{
+  content:"";
+  position:absolute; inset:0 0 auto 0;
+  height:64px;
+  background:linear-gradient(180deg, rgba(28,26,23,0.35), transparent);
+  pointer-events:none;
+}
+.finis-seal{opacity:0; transform:rotate(-8deg) scale(0.7); transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1); cursor:pointer;}
+.finis-seal.is-pressed{opacity:1; transform:rotate(-8deg) scale(1);}
+.finis-note{
+  text-align:center;
+  font-family:'Caveat', cursive;
+  font-size:15px;
+  color:rgba(239,232,216,0.55);
+  height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:opacity .5s ease;
+}
+.finis-note.is-shown{height:auto; opacity:1; margin-bottom:8px;}
+
+@media (prefers-reduced-motion: reduce){
+  .finis-seal{opacity:1; transform:rotate(-8deg) scale(1);}
+}
+
+/* ================= STAGE 5: FINAL POLISH — refinement only, no new sections ================= */
+
+/* ---- Accessibility: a visible, on-brand focus ring for keyboard navigation ---- */
+a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:focus-visible{
+  outline:2px solid var(--rust);
+  outline-offset:3px;
+  border-radius:1px;
+}
+
+/* ---- Accessibility: skip link, invisible until a keyboard user tabs to it ---- */
+.skip-link{
+  position:absolute;
+  left:16px; top:-60px;
+  background:var(--navy);
+  color:var(--paper);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:.04em;
+  padding:12px 18px;
+  border-radius:2px;
+  z-index:1000;
+  text-decoration:none;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:16px;}
+
+/* ---- Correctness: neutralize the shelf-lift starting transform under reduced motion
+       (same selector the effect was defined on, so it wins on source order — the book
+       must never visibly start offset for users who've asked for no motion) ---- */
+@media (prefers-reduced-motion: reduce){
+  .book.reveal{transform:none; transition:opacity .3s ease;}
+}
+
+/* ---- Lighting & depth: a faint top edge highlight, as if each book catches a little
+       overhead light — additive to the existing box-shadow, nothing removed ---- */
+.book{
+  box-shadow:0 14px 30px -12px rgba(28,26,23,0.4), inset 0 1px 0 rgba(255,255,255,0.07);
+}
+.book:hover{
+  box-shadow:-20px 28px 40px -18px rgba(28,26,23,0.5), inset 0 1px 0 rgba(255,255,255,0.1), inset 30px 0 46px -40px rgba(0,0,0,0.4);
+}
+
+/* ---- Restraint: dust reads as atmosphere, not confetti ---- */
+.hero-dust-canvas{opacity:0;}
+.hero-dust-canvas.is-live{opacity:0.82;}
+
+/* ---- Responsiveness: rare editorial details stay, but step back — smaller,
+       quieter, and nudged clear of the reading column ---- */
+@media (max-width:860px){
+  .coffee-ring{ top:14px !important; right:14px !important; transform:scale(0.6); opacity:0.7; }
+  .library-stamp{ bottom:4px !important; right:14px !important; transform:scale(0.3) rotate(-14deg); }
+  .pressed-flower{ transform:scale(0.85); }
+  .margin-note-about{ top:8px !important; right:10px !important; max-width:11ch !important; font-size:16px; }
+}
+@media (max-width:420px){
+  .coffee-ring{ transform:scale(0.46); }
+}
+
+
+/* ---- Responsiveness: the smallest phones need a narrower gutter, not a squeezed layout ---- */
+@media (max-width:380px){
+  .container{padding:0 20px;}
+  .nav-inner{padding:14px 20px; gap:14px;}
+  .nav-mark{font-size:17px;}
+  .hero-inner{padding:0 20px;}
+}
+@media (max-width:480px){
+  .rec-grid{grid-template-columns:1fr;}
+  .rec-item{border-right:none;}
+}
+
+/* ---- Responsiveness: keep the individual book ribbon proportionate on the single-column
+       mobile layout, and give touch targets on the filter row a little more room ---- */
+@media (max-width:700px){
+  .book-ribbon{height:30px; width:9px;}
+  .filter-btn{padding:12px 18px;}
+  .finis-seal{width:56px; height:56px; font-size:10px;}
+}
+@media (max-width:860px){
+  .nav-toggle{padding:10px 14px;}
+}
+
+/* ---- Code quality: consistent, calm easing for every hand-authored hover/­active state
+       that didn't already specify one (keeps the "editorial, not mechanical" feel uniform) ---- */
+.pub-card, .role-card, .rec-item{transition-timing-function:cubic-bezier(.19,1,.22,1);}
+
+/* ================= PRINTER'S MARK — the publisher's imprint, discovered rather than announced ================= */
+.imprint-section{
+  position:relative;
+  overflow:hidden;
+  padding:150px 0 92px;
+  isolation:isolate;
+}
+
+/* ---- fountain pen, pressed into the paper behind the mark ---- */
+.imprint-watermark{
+  position:absolute;
+  top:-640px;
+  left:50%;
+  width:260px;
+  transform:translateX(-50%);
+  color:var(--ink);
+  opacity:0.03;
+  pointer-events:none;
+  z-index:0;
+  mix-blend-mode:multiply;
+}
+.imprint-watermark svg{display:block; width:100%; height:auto;}
+
+.imprint{
+  position:relative;
+  z-index:1;
+  max-width:180px;
+  margin:0 auto;
+  text-align:center;
+}
+
+/* ---- the seal: a blind-embossed disc, not wax, not gloss ---- */
+.imprint-seal{
+  width:74px;
+  height:74px;
+  margin:0 auto 24px;
+  position:relative;
+  border-radius:48% 52% 50% 50% / 52% 48% 52% 48%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,255,0.55), rgba(255,255,255,0) 46%),
+    var(--paper);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.65),
+    inset 0 -3px 5px rgba(28,26,23,0.13),
+    inset 2px 2px 5px rgba(28,26,23,0.06),
+    0 1px 0 rgba(255,255,255,0.4),
+    0 8px 16px -12px rgba(28,26,23,0.35);
+}
+.imprint-seal svg{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:42px;
+  height:42px;
+  color:var(--ink-soft);
+  opacity:0.62;
+  filter:
+    drop-shadow(0 1px 0.5px rgba(28,26,23,0.28))
+    drop-shadow(0 -0.5px 0 rgba(255,255,255,0.65));
+}
+
+/* ---- small typographic ornament, a breath before the text ---- */
+.imprint-ornament{
+  width:52px;
+  margin:0 auto 20px;
+  color:var(--ink-soft);
+  opacity:0.4;
+}
+.imprint-ornament svg{display:block; width:100%; height:auto;}
+
+.imprint-eyebrow{
+  font-family:'Fraunces', serif;
+  font-size:10px;
+  font-weight:500;
+  font-style:italic;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  opacity:0.5;
+  margin:0 0 9px;
+}
+.imprint-name{
+  font-family:'Fraunces', serif;
+  font-size:14.5px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--ink);
+  opacity:0.72;
+  margin:0 0 10px;
+}
+.imprint-link{
+  display:inline-block;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9.5px;
+  letter-spacing:.09em;
+  color:var(--ink-soft);
+  opacity:0.48;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:opacity .4s ease, border-color .4s ease;
+}
+.imprint-link:hover, .imprint-link:focus-visible{
+  opacity:0.85;
+  border-color:currentColor;
+}
+.imprint-link:focus-visible{outline:none;}
+
+@media (max-width:700px){
+  .imprint-section{padding:118px 0 72px;}
+  .imprint-watermark{width:200px; top:-480px; opacity:0.035;}
+  .imprint-seal{width:64px; height:64px;}
+  .imprint-seal svg{width:36px; height:36px;}
+}
+@media (prefers-color-scheme: dark){
+  .imprint-watermark{mix-blend-mode:normal; opacity:0.05;}
+  .imprint-seal{
+    box-shadow:
+      inset 0 1px 1px rgba(255,255,255,0.12),
+      inset 0 -3px 5px rgba(0,0,0,0.4),
+      inset 2px 2px 5px rgba(0,0,0,0.25),
+      0 1px 0 rgba(255,255,255,0.06);
+  }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#top">Skip to content</a>
+<div class="reading-ribbon" id="readingRibbon" aria-hidden="true"></div>
+<div class="foxing-layer" aria-hidden="true"></div>
+<div class="atmosphere-layer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Ankit Raj <span>Ojha</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#bibliography">Bibliography</a></li>
+      <li><a href="#academic">Academic</a></li>
+      <li><a href="#editorial">Editorial</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-paper-texture" aria-hidden="true"></div>
+  <canvas class="hero-dust-canvas" id="heroDustCanvas" aria-hidden="true"></canvas>
+  <canvas class="ink-bloom-canvas" id="inkBloomCanvas" aria-hidden="true"></canvas>
+  <div class="hero-intro" id="heroIntro">
+    <div class="hero-intro-line" id="heroIntroLine"><span id="heroIntroText"></span><span class="hero-intro-cursor"></span></div>
+    <div class="hero-intro-name" id="heroIntroName">Ankit Raj Ojha</div>
+    <div class="hero-intro-roles" id="heroIntroRoles">Poet&nbsp;&nbsp;·&nbsp;&nbsp;Scholar&nbsp;&nbsp;·&nbsp;&nbsp;Editor&nbsp;&nbsp;·&nbsp;&nbsp;Translator</div>
+  </div>
+  <div class="hero-inner hero-content">
+    <div class="eyebrow">Chapra, Bihar → Roorkee → Haryana</div>
+    <h1>He used to write code.<br><em>Now he mostly writes back.</em></h1>
+    <p class="hero-sub">Poet, editor, translator, and a professor who still isn't convinced that seriousness and humour belong on opposite sides of a page. Published across twenty countries; still working out what a good line actually is.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">20</div><div class="lbl">Countries Published</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Books Authored / Edited</div></div>
+      <div class="hero-stat"><div class="num">60+</div><div class="lbl">Poems, Stories &amp; Essays</div></div>
+      <div class="hero-stat"><div class="num">16</div><div class="lbl">Academic Publications</div></div>
+    </div>
+  </div>
+</header>
+<section class="author-note" id="authors-note">
+  <svg class="pressed-flower" viewBox="0 0 100 100" style="top:38px; left:44px;" aria-hidden="true">
+    <g fill="none" stroke="#C6862E" stroke-width="1.1">
+      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(0 50 50)"/>
+      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(72 50 50)"/>
+      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(144 50 50)"/>
+      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(216 50 50)"/>
+      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(288 50 50)"/>
+      <circle cx="50" cy="50" r="5" fill="#A13D2C" stroke="none"/>
+      <path d="M50 66 C 46 78, 42 84, 34 92" stroke-width="1"/>
+    </g>
+  </svg>
+  <div class="container author-note-inner">
+    <div class="eyebrow author-note-eyebrow">Author's Note</div>
+    <!-- DRAFT — please confirm or rewrite before launch; this is Claude's best guess at his voice, not his actual words. -->
+    <p class="author-note-text">I did not set out to become a poet. I set out, at various points, to be an engineer, a rock musician, and — for one serious year — a man who understood spreadsheets. None of it quite took, and somewhere in the failing I ended up reading Kurt Vonnegut for a PhD and writing poems in the margins of the research. I still teach. I still think the funniest line in a poem can carry as much weight as the saddest one, and I have never fully forgiven the people who disagree. This site is where the two halves live together — the scholar footnoting Vonnegut's tricksters, and the man who once got nominated for a prize for a poem about dragons and meant every word of it.</p>
+    <div class="author-note-sign">— A.R.O.</div>
+  </div>
+</section>
+<div class="chapter-divider on-navy" style="background:var(--navy); padding:0 0 0px;"><span class="rule"></span><span class="mark">❧</span><span class="rule"></span></div>
+
+<section id="about">
+  <div class="margin-note margin-note-about" style="top:210px; right:8px; max-width:13ch;" aria-hidden="true">still not sure<br>about "footnote"</div>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Note on the Author</div>
+        <h2>About</h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="monogram">ARO</div>
+      <div class="about-text">
+        <p>Ankit Raj Ojha writes from Chapra, Bihar, by way of a few other places that shaped him more than he expected. His poems, stories, essays, and criticism have appeared in twenty countries — the Asahi Shimbun in Japan, the San Antonio Review in Uruguay, and a long list of small magazines in between that mattered more to him than either.</p>
+        <p>He worked briefly as an analyst at Infosys and fronted rock bands in Delhi NCR, Mysore, and Bhubaneswar before either could talk him out of literature. What survived from that decade is a permanent suspicion of anything that takes itself too seriously — including, occasionally, his own PhD. As one early reader of his work put it, his lines flirt with the mirthful even while a mind searching for something steadier moves underneath.</p>
+        <p>That PhD — in English, from IIT Roorkee — spent several years in the company of Kurt Vonnegut: his tricksters, his myths, his refusal to decide whether the universe is a joke or a tragedy. Ankit is still not sure Vonnegut ever decided either, which is probably the point. He now teaches English with the Department of Higher Education, Haryana, where the same argument continues in front of a classroom instead of a dissertation committee.</p>
+        <p>Editing has become a second, quieter vocation — as founding editor of <em>The Hooghly Review</em>, consulting editor with Routledge and Springer Nature, and guest editor at <em>Essence and Critique</em> in Turkey. His poem "How to tame your dragons" was nominated for both the Pushcart Prize and Best of the Net, and he placed in the top 1% of the 2023 Wergle Flomp Humour Poetry Contest — an award for bad poetry, on purpose, which he lists here with more pride than the nominations.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Based in</span><span class="v">Haryana, India</span></div>
+          <div class="fact"><span class="k">PhD</span><span class="v">IIT Roorkee, English</span></div>
+          <div class="fact"><span class="k">Position</span><span class="v">Asst. Professor of English, DHE Haryana</span></div>
+          <div class="fact"><span class="k">Editor</span><span class="v">Founding Editor, The Hooghly Review</span></div>
+          <div class="fact"><span class="k">Consulting</span><span class="v">Routledge &amp; Springer Nature</span></div>
+          <div class="fact"><span class="k">Research</span><span class="v">Kurt Vonnegut, myth &amp; archetype, posthumanism</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="books" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">On the Shelf</div>
+        <h2>Books</h2>
+      </div>
+      <div class="count">3 titles · 2022–2026</div>
+    </div>
+    <div class="books-grid">
+      <a class="book book-1 has-cover" href="https://www.hawakal.com/books/english-books/poetry-english-books/pinpricks-poems/" target="_blank" rel="noopener" data-bg="https://www.hawakal.com/wp-content/uploads/2022/06/Ankit-Front.jpeg">
+        <span class="book-pages" aria-hidden="true"></span>
+        <span class="book-ribbon" aria-hidden="true"></span>
+        <div>
+          <div class="book-eyebrow">Poetry Collection · Hawakal, 2022</div>
+          <div class="book-title">Pinpricks</div>
+          <div class="book-desc">A first collection — poems about migration, memory, and the particular ache of a family that doesn't talk about the things it feels most. "His lines flirt with the mirthful," wrote Sanjeev Sethi, "but behind his jocular moorings lies a mind searching for soothers." Reviewed in Kitaab, Tint Journal, and Outlook India.</div>
+        </div>
+        <div class="book-meta"><span>Poems</span><span>Hawakal Publishers</span></div>
+      </a>
+      <a class="book book-3 has-cover" href="https://www.hawakal.com/2023/10/16/wives/" target="_blank" rel="noopener" data-bg="https://www.hawakal.com/wp-content/uploads/2023/10/Wives-book-front-cover.jpg">
+        <span class="book-pages" aria-hidden="true"></span>
+        <div>
+          <div class="book-eyebrow">Edited Anthology · Hawakal, 2023</div>
+          <div class="book-title">Wives</div>
+          <div class="book-desc">An anthology he edited rather than wrote — forty-seven poets from twelve countries, writing toward a single shared theme. Editing this, he has said, taught him more about restraint than writing his own book did.</div>
+        </div>
+        <div class="book-meta"><span>Anthology</span><span>Hawakal Publishers</span></div>
+      </a>
+      <a class="book book-2 has-cover" href="https://barebonespublishing.in/product/the-bare-bones-book-of-humour/" target="_blank" rel="noopener" data-bg="https://barebonespublishing.in/wp-content/uploads/2025/12/The-Bare-Bones-Book-of-Humour-1.png">
+        <span class="book-pages" aria-hidden="true"></span>
+        <span class="book-ribbon" aria-hidden="true" style="background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); left:auto; right:30px;"></span>
+        <div>
+          <div class="book-eyebrow">Edited Anthology · Bare Bones, 2026</div>
+          <div class="book-title">The Bare Bones Book of Humour</div>
+          <div class="book-desc">Twenty-four writers, eight countries, one shared conviction: that comedy is not a lesser form of seriousness. Edited and introduced by Ankit, with a foreword by Mike Nagel. "A timely reminder," wrote Tabish Khair, "that humour needs to be taken very seriously."</div>
+        </div>
+        <div class="book-meta"><span>Short Fiction</span><span>Bare Bones Publishing</span></div>
+      </a>
+    </div>
+    <p style="margin-top:20px; font-size:12.5px; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;">Cover images via Hawakal Publishers and Bare Bones Publishing.</p>
+  </div>
+</section>
+<section class="timeline-wrap">
+  <div class="container">
+    <div class="eyebrow timeline-label">A Working Life</div>
+    <div class="timeline">
+      <span class="timeline-stage">Engineer</span><span class="timeline-arrow">→</span>
+      <span class="timeline-stage">Researcher</span><span class="timeline-arrow">→</span>
+      <span class="timeline-stage">Poet</span><span class="timeline-arrow">→</span>
+      <span class="timeline-stage">Editor</span><span class="timeline-arrow">→</span>
+      <span class="timeline-stage">Scholar</span><span class="timeline-arrow">→</span>
+      <span class="timeline-stage is-current">Teacher</span>
+    </div>
+  </div>
+</section>
+<section class="recognition" style="padding:0;">
+  <div class="container" style="padding:0;">
+    <div class="rec-grid">
+      <div class="rec-item">
+        <div class="yr">2024 · Nomination</div>
+        <h4>Pushcart Prize</h4>
+        <p>For "How to tame your dragons," published in Porcupine Literary. A poem he still doesn't fully understand winning any attention, which might be why it did.</p>
+      </div>
+      <div class="rec-item">
+        <div class="yr">2025 · Nomination</div>
+        <h4>Best of the Net</h4>
+        <p>The same poem, nominated again. He is beginning to suspect it knows something he doesn't.</p>
+      </div>
+      <div class="rec-item">
+        <div class="yr">2023 · Top 1%</div>
+        <h4>Wergle Flomp Humour Poetry Contest</h4>
+        <p>An international contest for deliberately bad poetry. He entered on a dare, more or less, and ranked embarrassingly well. Lists it here next to the Pushcart on purpose.</p>
+      </div>
+      <div class="rec-item">
+        <div class="yr">2023 · Winner</div>
+        <h4>Briefly Think Essay Prize</h4>
+        <p>For "Becoming Poetry," published by Briefly Write. The one essay he'd ask someone to read first if they only had time for one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="selected-works">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">A Few Worth Starting With</div>
+        <h2>Selected Works</h2>
+      </div>
+    </div>
+    <p class="selected-works-intro">A few worth starting with, out of the sixty or so.</p>
+    <div class="selected-works-list">
+      <div class="selected-work">
+        <span class="selected-work-year">2024</span>
+        <span class="selected-work-title">How to tame your dragons<span class="selected-work-venue">Porcupine Literary · USA</span></span>
+        <span class="selected-work-note">The one that keeps getting nominated for things</span>
+      </div>
+      <div class="selected-work">
+        <span class="selected-work-year">2023</span>
+        <span class="selected-work-title">Becoming Poetry<span class="selected-work-venue">Briefly Write · England</span></span>
+        <span class="selected-work-note">The essay he'd hand you first</span>
+      </div>
+      <div class="selected-work">
+        <span class="selected-work-year">2023</span>
+        <span class="selected-work-title">Halāhal<span class="selected-work-venue">The Honest Ulsterman · Northern Ireland</span></span>
+        <span class="selected-work-note">The one about the poison everyone in the myth has to drink, and does</span>
+      </div>
+      <div class="selected-work">
+        <span class="selected-work-year">2025</span>
+        <span class="selected-work-title">The Boys Who Lived<span class="selected-work-venue">The Brussels Review · Belgium</span></span>
+        <span class="selected-work-note">Fiction, and stranger than the poems</span>
+      </div>
+      <div class="selected-work">
+        <span class="selected-work-year">2025</span>
+        <span class="selected-work-title"><a href="https://www.pikerpress.com/article/10989/sonam-gupta-is-a-cheater" target="_blank" rel="noopener">Sonam Gupta Is a Cheater</a><span class="selected-work-venue">The Piker Press · USA</span></span>
+        <span class="selected-work-note">Proof he doesn't take titles seriously either</span>
+      </div>
+      <div class="selected-work">
+        <span class="selected-work-year">2023</span>
+        <span class="selected-work-title"><a href="https://www.thechakkar.com/home/residentalien" target="_blank" rel="noopener">Resident Alien</a><span class="selected-work-venue">The Chakkar · India</span></span>
+        <span class="selected-work-note">On being from somewhere, and then somewhere else</span>
+      </div>
+    </div>
+    <div class="selected-works-more"><a href="#bibliography">View the full bibliography ↓</a></div>
+  </div>
+</section>
+
+<section id="bibliography">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">The Catalogue</div>
+        <h2>Bibliography</h2>
+      </div>
+      <div class="count" id="bibCount">60+ works across 20 countries</div>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="poem" aria-pressed="false">Poetry</button>
+      <button class="filter-btn" data-filter="fiction" aria-pressed="false">Fiction</button>
+      <button class="filter-btn" data-filter="essay" aria-pressed="false">Essays &amp; Reviews</button>
+      <button class="filter-btn" data-filter="interview" aria-pressed="false">Interviews &amp; Media</button>
+    </div>
+    <div class="card-grid" id="cardGrid"></div>
+  </div>
+</section>
+
+<section id="academic" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="library-stamp" style="bottom:64px; right:40px;" aria-hidden="true">Ex Libris<br>A.R.O.<br>Est. 2021</div>
+
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">The Scholar</div>
+        <h2>Academic Work</h2>
+      </div>
+      <div class="count">16 publications</div>
+    </div>
+    <p class="academic-intro">Ankit's doctoral research at <strong>IIT Roorkee</strong> spent several years arguing with <strong>Kurt Vonnegut</strong> — specifically with his tricksters, the myths he half-believed and half-mocked, and his stubborn refusal to say whether human beings are worth saving. The work has appeared in <strong>Critique: Studies in Contemporary Fiction</strong>, <strong>The Explicator</strong>, <strong>ANQ</strong>, <strong>Scrutiny2</strong>, and <strong>Partial Answers</strong>, among others. He still isn't sure he's won the argument.</p>
+    <div class="tags-row">
+      <span class="tag-chip">Postmodern Fiction</span>
+      <span class="tag-chip">Kurt Vonnegut Studies</span>
+      <span class="tag-chip">Archetypal &amp; Myth Theory</span>
+      <span class="tag-chip">Psychoanalytic Theory</span>
+      <span class="tag-chip">Comparative Literature</span>
+      <span class="tag-chip">Posthumanism</span>
+    </div>
+    <table class="pub-table">
+      <thead>
+        <tr><th>Article</th><th>Venue</th><th>Year</th><th style="text-align:right;">Citations</th></tr>
+      </thead>
+      <tbody id="academicBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="editorial">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Behind the Desk</div>
+        <h2>Editorial Roles</h2>
+      </div>
+    </div>
+    <p class="academic-intro" style="margin-bottom:36px;">Editing, to him, is reading someone else's work as carefully as he'd want his own read — which turns out to be a different skill than writing, and one he's come to like just as much.</p>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="eyebrow">Founding Editor</div>
+        <h4>The Hooghly Review</h4>
+        <p>An international magazine of literature, culture, and arts, founded and edited by Ankit.</p>
+      </div>
+      <div class="role-card">
+        <div class="eyebrow">Consulting Editor</div>
+        <h4>Routledge &amp; Springer Nature</h4>
+        <p>Consulting editor across academic journals and volumes published by both houses.</p>
+      </div>
+      <div class="role-card">
+        <div class="eyebrow">Guest Editor</div>
+        <h4>Essence and Critique</h4>
+        <p>Journal of Literature and Drama Studies, Bingöl Üniversitesi, Turkey.</p>
+      </div>
+      <div class="role-card">
+        <div class="eyebrow">Anthology Editor</div>
+        <h4>Wives (2023)</h4>
+        <p>Poetry anthology of emerging and established poets, Hawakal Publishers.</p>
+      </div>
+      <div class="role-card">
+        <div class="eyebrow">Anthology Editor</div>
+        <h4>The Bare Bones Book of Humour (2026)</h4>
+        <p>24 writers, 8 countries — a literary humour short story anthology.</p>
+      </div>
+      <div class="role-card">
+        <div class="eyebrow">Translator</div>
+        <h4>Cross-language work</h4>
+        <p>Translation work featured alongside contributions in Out of Print Magazine and elsewhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="press" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="coffee-ring" style="top:56px; right:64px;" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">In His Own Words</div>
+        <h2>Press &amp; Interviews</h2>
+      </div>
+      <div class="count">Selected conversations</div>
+    </div>
+    <div class="press-list" id="pressList"></div>
+  </div>
+</section>
+
+<footer class="contact" id="contact">
+    <div class="finis-seal" id="finisSeal" tabindex="0" role="button" aria-label="A small discovery — press the seal">Finis</div>
+    <div class="finis-note" id="finisNote">turn the page, then?</div>
+    <div class="contact-close-mark">❧</div>
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--ochre);">Get in Touch</div>
+        <h2>If you've read this far, you already know more about me than most people bother to.</h2>
+        <p class="contact-sub">Get in touch about writing, editing, translation, or an argument about Vonnegut. I answer most emails, eventually, and always the funny ones first.</p>
+        <a class="contact-email" href="mailto:hello@ankitrajojha.com">hello@ankitrajojha.com</a>
+        <div class="contact-epigraph">Every page ends somewhere. This one just ends here.</div>
+      </div>
+      <ul class="social-list">
+        <li><a href="https://twitter.com/ankit_raj01" target="_blank" rel="noopener"><span>X / Twitter <span class="handle">@ankit_raj01</span></span><span class="arrow">→</span></a></li>
+        <li><a href="https://www.instagram.com/ankitrajojha1/" target="_blank" rel="noopener"><span>Instagram <span class="handle">@ankitrajojha1</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span>Bluesky <span class="handle">@ankitrajojha.bsky.social</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span>YouTube <span class="handle">Channel</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span>ORCID <span class="handle">Researcher ID</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span>ResearchGate <span class="handle">Ankit Raj</span></span><span class="arrow">→</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ankit Raj Ojha</span>
+      <span>Set in Fraunces &amp; Newsreader — from Chapra to Roorkee to Haryana</span>
+    </div>
+  </div>
+</footer>
+
+<section class="imprint-section reveal" aria-label="Publisher's imprint">
+  <div class="imprint-watermark" aria-hidden="true">
+    <svg viewBox="0 0 120 420" xmlns="http://www.w3.org/2000/svg">
+      <path d="M46 0 L74 0 L74 258 L46 258 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M46 54 L74 54 M46 84 L74 84 M46 228 L74 228" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M52 258 L68 258 L64 322 Q60 344 56 322 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+      <line x1="60" y1="260" x2="60" y2="338" stroke="currentColor" stroke-width="0.6"/>
+      <circle cx="60" cy="284" r="2.2" fill="none" stroke="currentColor" stroke-width="0.6"/>
+    </svg>
+  </div>
+
+  <div class="imprint">
+    <div class="imprint-seal" aria-hidden="true">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <text x="34" y="66" font-family="'Fraunces', serif" font-style="italic" font-weight="500" font-size="50" text-anchor="middle" fill="currentColor">S</text>
+        <text x="63" y="66" font-family="'Fraunces', serif" font-style="italic" font-weight="500" font-size="50" text-anchor="middle" fill="currentColor">K</text>
+        <path d="M60 16 L65 29 L60 43 L55 29 Z" fill="currentColor"/>
+        <line x1="60" y1="18" x2="60" y2="41" stroke="var(--paper)" stroke-width="0.7"/>
+        <circle cx="60" cy="33" r="1.1" fill="var(--paper)"/>
+        <path d="M57 80 Q59 89 54 94 Q59 91 61 85 Q63 91 68 94 Q63 89 65 80" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="77" cy="72" r="1.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <div class="imprint-ornament" aria-hidden="true">
+      <svg viewBox="0 0 60 10" xmlns="http://www.w3.org/2000/svg">
+        <line x1="2" y1="5" x2="23" y2="5" stroke="currentColor" stroke-width="0.6"/>
+        <path d="M19 3 L23 5 L19 7" fill="none" stroke="currentColor" stroke-width="0.6"/>
+        <rect x="28" y="3" width="4" height="4" transform="rotate(45 30 5)" fill="currentColor"/>
+        <line x1="37" y1="5" x2="58" y2="5" stroke="currentColor" stroke-width="0.6"/>
+        <path d="M41 3 L37 5 L41 7" fill="none" stroke="currentColor" stroke-width="0.6"/>
+      </svg>
+    </div>
+
+    <p class="imprint-eyebrow">Imprint</p>
+    <p class="imprint-name">Shashwat Kashyap</p>
+    <a class="imprint-link" href="https://shashwatkashyap.com" target="_blank" rel="noopener">shashwatkashyap.com</a>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+// ---------- DATA ----------
+const publications = [
+  {type:'poem', title:'haiku', venue:'The Asahi Shimbun', country:'Japan', year:'2024'},
+  {type:'fiction', title:'The Boys Who Lived', venue:'The Brussels Review', country:'Belgium', year:'2025'},
+  {type:'fiction', title:'Sonam Gupta Is a Cheater', venue:'The Piker Press', country:'USA', year:'2025', link:'https://www.pikerpress.com/article/10989/sonam-gupta-is-a-cheater'},
+  {type:'fiction', title:"The Engineer's Tale", venue:'BULL', country:'USA', year:'2023'},
+  {type:'fiction', title:"The Curious Case of François Bereaud's Belly Button", venue:'MEARI', country:'USA', year:'2023'},
+  {type:'poem', title:'Mahanadi', venue:'Doubleback Review', country:'USA', year:'2023'},
+  {type:'essay', title:"Review of Pinpricks (by Pritikana Karmakar)", venue:'Tint Journal', country:'Austria', year:'2023'},
+  {type:'poem', title:'A Song for Sonagachi', venue:'Porch Literary Magazine', country:'Indonesia', year:'2023'},
+  {type:'poem', title:'Reflections Upon Visiting the Old Cemetery in Roorkee', venue:'All My Relations', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9457/reflections-upon-visiting-the-old-cemetery-in-roorkee'},
+  {type:'poem', title:'The thing with thunderbolts', venue:'The Wee Sparrow Poetry Press', country:'Spain', year:'2023'},
+  {type:'essay', title:'Review of Pinpricks (by Shivalika Agarwal)', venue:'Outlook India', country:'India', year:'2023'},
+  {type:'poem', title:'The Boy Next Door', venue:'Ink Sweat & Tears', country:'England', year:'2023'},
+  {type:'poem', title:'Halāhal', venue:'The Honest Ulsterman', country:'Northern Ireland', year:'2023'},
+  {type:'poem', title:'Span', venue:'Poetry Wales', country:'Wales', year:'2023'},
+  {type:'poem', title:'Scales', venue:'Poetry Scotland', country:'Scotland', year:'2023'},
+  {type:'poem', title:'Dear Poet', venue:'JAKE', country:'USA', year:'2023'},
+  {type:'poem', title:'Resident Alien', venue:'The Chakkar', country:'India', year:'2023', link:'https://www.thechakkar.com/home/residentalien'},
+  {type:'poem', title:'Bookkeeping; Of Humans; Inheritance; For Papa; Resurgence; On Love', venue:'Dreich', country:'Scotland', year:'2022'},
+  {type:'poem', title:'On Reading; On Writing; Portrait of the Artist as a Lover; Replay; Notification; Poets Anonymous', venue:'Dreich', country:'Scotland', year:'2022'},
+  {type:'poem', title:'Reflections…; The Infidel; The Barrel', venue:'Close Encounters in War Journal', country:'Italy', year:'2022'},
+  {type:'poem', title:'How to tame your dragons', venue:'Porcupine Literary', country:'USA', year:'2024'},
+  {type:'interview', title:'Daniel Clark in conversation with Ankit Raj Ojha', venue:'Briefly Write', country:'England', year:'2023'},
+  {type:'essay', title:'Review of Pinpricks (by Dr Shyamasri Maji)', venue:'Kitaab', country:'Singapore', year:'2023'},
+  {type:'poem', title:'Exchange; Cusp; Delhi', venue:'San Antonio Review', country:'Uruguay', year:'2022'},
+  {type:'fiction', title:'The Banality of Indifference', venue:'Stanchion', country:'USA', year:'2022'},
+  {type:'interview', title:'Panel: The Magic of Maths and Science', venue:'Tell Me Your Story', country:'India', year:'2022'},
+  {type:'essay', title:'Becoming Poetry', venue:'Briefly Write', country:'England', year:'2023'},
+  {type:'poem', title:'Bookkeeping', venue:'miniMag', country:'China / Thailand', year:'2022'},
+  {type:'essay', title:'Review of Water Has Many Colors (Kiriti Sengupta)', venue:'Indian Literature — Sahitya Akademi', country:'India', year:'2022'},
+  {type:'essay', title: "Review of Strokes of Solace (Sanjeev Sethi)", venue:'The Hooghly Review, Issue 1', country:'India', year:'2022'},
+  {type:'essay', title:"Review of Strokes of Solace (Sanjeev Sethi)", venue:'Ink Sweat & Tears', country:'England', year:'2022'},
+  {type:'poem', title:'The Boy Next Door', venue:'Worcestershire Acute Hospitals Charity Anthology: Hope & Joy', country:'England', year:'2022'},
+  {type:'interview', title:'"A Word?" Wednesday with Kellie Scott-Reed', venue:'Roi Fainéant Press', country:'USA', year:'2022'},
+  {type:'poem', title:'Palate', venue:'Illustrated by Jason Novak', country:'USA', year:'2022'},
+  {type:'poem', title:'Dream Publication; Resurgence; A Silent Street Sermon; Replay; Poets Anonymous', venue:'Outlook India', country:'India', year:'2022'},
+  {type:'poem', title:'Inheritance', venue:'The Bayou Review — Univ. of Houston-Downtown', country:'USA', year:'2022'},
+  {type:'poem', title:'Mahanadi', venue:'Native Skin', country:'USA', year:'2022'},
+  {type:'poem', title:'Essential Services', venue:'Roi Fainéant Press', country:'USA', year:'2022'},
+  {type:'fiction', title:"Tantan Chacha's Brand New Dragon Balls", venue:'The Broadkill Review', country:'USA', year:'2022'},
+  {type:'poem', title:'Morning; Scrutiny; Happily Ever After', venue:'Setu Bilingual', country:'USA', year:'2022'},
+  {type:'poem', title:'Portrait of the Artist as a Lover', venue:'The Piker Press', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9460/portrait-of-the-artist-as-a-lover'},
+  {type:'poem', title:'On Writing', venue:'The Piker Press', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9459/on-writing'},
+  {type:'poem', title:'On Reading', venue:'The Piker Press', country:'USA', year:'2023', link:'https://www.pikerpress.com/article/9458/on-reading'},
+  {type:'poem', title:'Falling in Love', venue:'The Piker Press', country:'USA', year:'2023', link:'https://www.pikerpress.com/article/9461/falling-in-love'},
+  {type:'poem', title:'How to come back from the dead', venue:'The Martello Journal', country:'Ireland', year:'2021'},
+  {type:'poem', title:'The Infidel', venue:"The Bitchin' Kitsch", country:'USA', year:'2021'},
+  {type:'poem', title:'Notification', venue:'Loft Books', country:'England', year:'2021'},
+  {type:'essay', title:'Twitterature Review', venue:'Loft Books', country:'England', year:'2021'},
+  {type:'poem', title:"Rorschach's Journal", venue:'Cajun Mutt Press', country:'USA', year:'2021'},
+  {type:'poem', title:'Cavities; Circle; Supposedly Stolen Lives', venue:'A Thin Slice of Anxiety', country:'USA', year:'2021'},
+  {type:'poem', title:'The Boy Next Door', venue:'The Dillydoun Review', country:'USA', year:'2021'},
+  {type:'poem', title:'Mahanadi; Reflections…; Essential Services', venue:'Amity: Peace Poems — Hawakal', country:'India', year:'2021'},
+  {type:'poem', title:'Palate; Generation Gap', venue:'Dreich Planet #1 India', country:'Scotland', year:'2021'},
+  {type:'poem', title:'Home', venue:'Paddler Press, Vol. 5', country:'Canada', year:'2021'},
+  {type:'poem', title:'Home', venue:'One Minute Poems: An Audio Anthology — Rancid Idols Productions', country:'Northern Ireland', year:'2021'},
+  {type:'fiction', title:'The Life and Times of Suku and Dukhu', venue:'Roi Fainéant Press', country:'USA', year:'2021'},
+  {type:'poem', title:'Portrait of a Lady Taken Too Soon', venue:'Brave Voices Magazine', country:'USA', year:'2021'},
+  {type:'poem', title:'No, Thanks!', venue:'Trouvaille Review', country:'USA', year:'2021'},
+  {type:'poem', title:'Pride', venue:'Streetcake Magazine', country:'England', year:'2021'},
+  {type:'poem', title:'Dinner tastes better than philosophy; I am spending myself in instalments; Generation Gap', venue:'Roi Fainéant Press', country:'USA', year:'2021'},
+  {type:'poem', title:'Every time I get my pump broken', venue:'Bullshit Lit', country:'USA', year:'2021'},
+  {type:'poem', title:'Manufactured Love', venue:'Discretionary Love', country:'USA', year:'2021'},
+];
+
+const academic = [
+  {title:'The Hero at a Thousand Places: Kurt Vonnegut\u2019s Slaughterhouse-Five as Anti-Monomyth', venue:'Critique: Studies in Contemporary Fiction, 62(2)', year:'2021', cite:7},
+  {title:'Dissecting the Doubtful Darwin: Kurt Vonnegut\u2019s Humanist Posthumanism in Gal\u00e1pagos', venue:'Scrutiny2: Issues in English Studies in Southern Africa, 26(1)', year:'2022', cite:3},
+  {title:'Finding "Bluebeard" in Kurt Vonnegut\u2019s Bluebeard', venue:'ANQ: A Quarterly Journal of Short Articles, Notes and Reviews, 36(1)', year:'2023', cite:2},
+  {title:'"Trick or Treat!": The Trickster Figure in God Bless You, Mr Rosewater and Slapstick', venue:'The Explicator, 79(4)', year:'2021', cite:1},
+  {title:'"Playing God, Are We?": The Cosmogonic Concoction in Kurt Vonnegut\u2019s Gal\u00e1pagos', venue:'Critique: Studies in Contemporary Fiction', year:'2022', cite:0},
+  {title:'The Painter and the Muse: Archetypes, Complexes and the Anti-Jungian Quest for Mother in Bluebeard', venue:'Partial Answers: Journal of Literature and the History of Ideas, 21(2)', year:'2023', cite:0},
+  {title:'Review of Wrappings in Bespoke by Sanjeev Sethi', venue:'Kavya Bharati, 35', year:'2023', cite:0},
+  {title:'Sermons on Joint: Bob Marley, Bokonon and the Religio-lyrical Affair with State Apparatuses', venue:'Dogmas in Literature and Literary Missionary (book chapter)', year:'2023', cite:0},
+  {title:'Review of Water Has Many Colors by Kiriti Sengupta', venue:'Indian Literature, 66(2) — Sahitya Akademi', year:'2022', cite:0},
+  {title:'A Portrait of the Artist as an Old Man: Bluebeard as an Anti-Jungian Mother Quest', venue:'Conference Paper', year:'2022', cite:0},
+  {title:'The Devil with Many Faces: Reading Deviants as Tricksters in Vonnegut\u2019s Fiction', venue:'Conference Paper', year:'2021', cite:0},
+  {title:'Memory, Artifice and the Indian Oedipus in A.K. Ramanujan\u2019s "Ecology"', venue:'Conference Paper', year:'2021', cite:0},
+  {title:'A Hero for All Seasons? Rethinking the Hero Quest Narrative in Vonnegut\u2019s Postmodern Fiction', venue:'Conference Paper', year:'2021', cite:0},
+  {title:'Of War and Forgetting: Massacres, Memory, and Trauma in Vonnegut\u2019s Fiction', venue:'Conference Paper', year:'2021', cite:0},
+  {title:'And Pastures New: Ecology, Cosmogony and Post-Anthropocene Utopia in Gal\u00e1pagos', venue:'Conference Paper', year:'2021', cite:0},
+  {title:'Food, Memory, Identity and the Female Hero Quest in Laura Esquivel\u2019s Como agua para chocolate', venue:'Conference Paper', year:'2021', cite:0},
+];
+
+const press = [
+  {date:'Feb 2026', title:'Ankit Raj Ojha in Conversation with Ankush Banerjee', outlet:'Usawa Literary Review — Matchbox', link:'https://usawa.in/bookshelf/the-bare-bones-book-of-humour/'},
+  {date:'Jan 2026', title:'In Conversation with Ankit Raj Ojha', outlet:'Bare Bones Publishing — Blog', link:'https://barebonespublishing.in/2026/01/25/in-conversation-with-ankit-raj-ojha/'},
+  {date:'2023', title:'Interview: Daniel Clark in Conversation with Ankit Raj Ojha', outlet:'Briefly Write, England', link:'https://brieflywrite.com/2023/06/23/conversation-with-ankit-raj-ojha/'},
+  {date:'2022', title:'"A Word?" Wednesday with Kellie Scott-Reed and Ankit Raj Ojha', outlet:'Roi Fainéant Press, USA'},
+];
+
+// ---------- LAZY-LOAD BOOK COVERS (heavy external images, deferred until near view) ----------
+const lazyBg = document.querySelectorAll('[data-bg]');
+if ('IntersectionObserver' in window){
+  const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        el.style.backgroundImage = `url('${el.dataset.bg}')`;
+        bgObserver.unobserve(el);
+      }
+    });
+  }, {rootMargin:'300px 0px'});
+  lazyBg.forEach(el => bgObserver.observe(el));
+} else {
+  lazyBg.forEach(el => { el.style.backgroundImage = `url('${el.dataset.bg}')`; });
+}
+
+// ---------- SCROLL REVEALS ----------
+document.querySelectorAll('.section-head, .about-text > p, .rec-item, .role-card, .book, .press-item').forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+
+function observeReveals(root){
+  (root || document).querySelectorAll('.reveal:not(.is-visible)').forEach(el => revealObserver.observe(el));
+}
+observeReveals();
+
+// ---------- RENDER BIBLIOGRAPHY ----------
+const cardGrid = document.getElementById('cardGrid');
+const typeLabels = {poem:'Poetry', fiction:'Fiction', essay:'Essay / Review', interview:'Interview / Media'};
+
+function renderCards(filter){
+  cardGrid.innerHTML = '';
+  const list = filter === 'all' ? publications : publications.filter(p => p.type === filter);
+  list.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'pub-card reveal';
+    card.innerHTML = `
+      <span class="pub-index">No. ${String(i + 1).padStart(2, '0')}</span>
+      <div class="pub-top">
+        <span class="pub-tag">${typeLabels[p.type]}</span>
+        <span class="pub-year">${p.year}</span>
+      </div>
+      <div class="pub-title">${p.title}</div>
+      <div class="pub-venue">${p.venue} <span class="country">· ${p.country}</span></div>
+      ${p.link ? `<a class="pub-link" href="${p.link}" target="_blank" rel="noopener">Read piece →</a>` : ''}
+    `;
+    cardGrid.appendChild(card);
+  });
+  document.getElementById('bibCount').textContent = `${list.length} works shown`;
+  observeReveals(cardGrid);
+}
+renderCards('all');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+    renderCards(btn.dataset.filter);
+  });
+});
+
+// ---------- RENDER ACADEMIC TABLE ----------
+const academicBody = document.getElementById('academicBody');
+academic.forEach(a => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td class="pt-title">${a.title}</td>
+    <td class="pt-venue">${a.venue}</td>
+    <td class="pt-year">${a.year}</td>
+    <td class="pt-cite">${a.cite > 0 ? a.cite : '—'}</td>
+  `;
+  academicBody.appendChild(tr);
+});
+
+// ---------- RENDER PRESS ----------
+const pressList = document.getElementById('pressList');
+press.forEach(p => {
+  const item = document.createElement('div');
+  item.className = 'press-item';
+  item.innerHTML = `
+    <div class="press-date">${p.date}</div>
+    <div>
+      <div class="press-title">${p.link ? `<a class="press-link" style="font-family:inherit; font-size:inherit; color:inherit; border-bottom:none;" href="${p.link}" target="_blank" rel="noopener">${p.title}</a>` : p.title}</div>
+      <div class="press-outlet">${p.outlet}</div>
+    </div>
+    <div></div>
+  `;
+  pressList.appendChild(item);
+});
+
+// ---------- NAV TOGGLE ----------
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
+
+// ---------- CINEMATIC HERO INTRO (opening titles, not a loading screen — plays once, on a true top-of-page load) ----------
+(function heroIntro(){
+  const introEl = document.getElementById('heroIntro');
+  const lineWrap = document.getElementById('heroIntroLine');
+  const textSpan = document.getElementById('heroIntroText');
+  const nameEl = document.getElementById('heroIntroName');
+  const rolesEl = document.getElementById('heroIntroRoles');
+  const heroContent = document.querySelector('.hero-content');
+  const bloomCanvas = document.getElementById('inkBloomCanvas');
+  if (!introEl || !textSpan || !heroContent) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // A load anywhere but the very top of the page — a refresh mid-scroll, a deep link,
+  // a hash target — is never treated as "opening night." The reader gets the page
+  // instantly, exactly where they left off, with no overlay to dismiss.
+  const atTop = (window.scrollY || window.pageYOffset || 0) < 40;
+  const shouldPlay = !reducedMotion && atTop;
+
+  // Shared with the Stage 4 ink-bloom canvas below, which must never animate
+  // on its own if the opening sequence itself isn't playing.
+  window.__playHeroIntro = shouldPlay;
+
+  function showInstantly(){
+    // Disable transitions just for this state change so "skip" truly means
+    // instant, not a fast fade — then hand transition control back afterward
+    // in case anything else ever relies on it.
+    [introEl, heroContent, bloomCanvas].forEach(el => { if (el) el.style.transition = 'none'; });
+    introEl.classList.add('hero-intro-hidden');
+    heroContent.classList.add('is-visible');
+    if (bloomCanvas) bloomCanvas.classList.add('is-done');
+    requestAnimationFrame(() => {
+      [introEl, heroContent, bloomCanvas].forEach(el => { if (el) el.style.transition = ''; });
+    });
+  }
+
+  if (!shouldPlay){
+    showInstantly();
+    return;
+  }
+
+  // ---- opening titles: lock the reader in place until the reveal completes ----
+  const htmlEl = document.documentElement;
+  htmlEl.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+  function unlockScroll(){
+    htmlEl.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  // one soft typewriter key sound, one paper rustle, one carriage return — never reused elsewhere
+  let audioCtx;
+  function paperSound(){
+    try{
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const duration = 0.4;
+      const bufferSize = Math.floor(audioCtx.sampleRate * duration);
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++){
+        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 1.6);
+      }
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = buffer;
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 1800;
+      filter.Q.value = 0.5;
+      const gain = audioCtx.createGain();
+      gain.gain.value = 0.045;
+      noise.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
+      noise.start();
+    }catch(e){}
+  }
+  function typeSound(){
+    try{
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = 'square'; o.frequency.value = 1150 + Math.random() * 180;
+      g.gain.value = 0.02;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.03);
+      o.stop(audioCtx.currentTime + 0.04);
+    }catch(e){}
+  }
+  function carriageSound(){
+    try{
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = 'triangle'; o.frequency.setValueAtTime(650, audioCtx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(280, audioCtx.currentTime + 0.15);
+      g.gain.value = 0.03;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.18);
+      o.stop(audioCtx.currentTime + 0.2);
+    }catch(e){}
+  }
+
+  // the ink bloom (Stage 4, below) begins dissolving the instant this script runs —
+  // the paper sound fires in that same beat, so the wash and the rustle land together
+  paperSound();
+
+  const phrases = ['He writes.', 'He observes.', 'He remembers.'];
+  let phraseIndex = 0;
+
+  function typeText(text, cb){
+    let i = 0;
+    (function step(){
+      if (i <= text.length){
+        textSpan.textContent = text.slice(0, i);
+        if (i < text.length) typeSound();
+        i++;
+        setTimeout(step, 65);
+      } else { setTimeout(cb, 650); }
+    })();
+  }
+  function deleteText(text, cb){
+    let i = text.length;
+    (function step(){
+      if (i >= 0){
+        textSpan.textContent = text.slice(0, i);
+        i--;
+        setTimeout(step, 32);
+      } else { setTimeout(cb, 180); }
+    })();
+  }
+  function advance(){
+    if (phraseIndex < phrases.length){
+      const phrase = phrases[phraseIndex];
+      typeText(phrase, () => deleteText(phrase, () => { phraseIndex++; advance(); }));
+    } else {
+      carriageSound();
+      lineWrap.style.display = 'none';
+      nameEl.classList.add('is-visible');
+      setTimeout(() => rolesEl.classList.add('is-visible'), 500);
+      setTimeout(() => {
+        introEl.classList.add('hero-intro-hidden');
+        heroContent.classList.add('is-visible');
+        unlockScroll();
+      }, 2100);
+    }
+  }
+  setTimeout(advance, 500);
+})();
+
+// ---------- CUSTOM CURSOR (subtle ink dot, desktop only) ----------
+if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  const cursorDot = document.createElement('div');
+  cursorDot.className = 'ink-cursor';
+  document.body.appendChild(cursorDot);
+  window.addEventListener('mousemove', (e) => {
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+  });
+
+  // faint trailing bead of ink, lagging slightly behind the nib
+  const trailDot = document.createElement('div');
+  trailDot.className = 'ink-trail';
+  document.body.appendChild(trailDot);
+  let tx = 0, ty = 0, mx = 0, my = 0;
+  window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  (function driftTrail(){
+    tx += (mx - tx) * 0.12;
+    ty += (my - ty) * 0.12;
+    trailDot.style.left = tx + 'px';
+    trailDot.style.top = ty + 'px';
+    requestAnimationFrame(driftTrail);
+  })();
+}
+</script>
+
+<!-- ================= STAGE 3: THE STUDY — GSAP / Three.js enhancement layer ================= -->
+<!-- Purely additive: reads the page that already exists, never rewrites it. -->
+<script>
+(function stage3(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- READING RIBBON (bookmark that grows with how far you've read) ----------
+  const ribbon = document.getElementById('readingRibbon');
+  if (ribbon && !reduceMotion){
+    let ticking = false;
+    function updateRibbon(){
+      const doc = document.documentElement;
+      const scrolled = doc.scrollTop || document.body.scrollTop;
+      const max = (doc.scrollHeight - doc.clientHeight) || 1;
+      const pct = Math.min(1, Math.max(0, scrolled / max));
+      ribbon.style.transform = `scaleY(${0.03 + pct * 0.97})`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking){ requestAnimationFrame(updateRibbon); ticking = true; }
+    }, {passive:true});
+    updateRibbon();
+  }
+
+  // ---------- CHAPTER HEADINGS: ink wipe on scroll entry ----------
+  const heads = document.querySelectorAll('.section-head');
+  if ('IntersectionObserver' in window){
+    const headObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('ink-in');
+          headObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.35});
+    heads.forEach(h => headObserver.observe(h));
+  } else {
+    heads.forEach(h => h.classList.add('ink-in'));
+  }
+
+  // ---------- TIMELINE: "a working life" unfolds left to right ----------
+  const timelineEl = document.querySelector('.timeline');
+  if (timelineEl){
+    if (typeof gsap !== 'undefined' && !reduceMotion){
+      const stages = timelineEl.querySelectorAll('.timeline-stage, .timeline-arrow');
+      if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+      gsap.to(stages, {
+        opacity:1, y:0, duration:0.55, ease:'power2.out', stagger:0.12,
+        scrollTrigger:{ trigger: timelineEl, start:'top 78%', once:true }
+      });
+    } else {
+      timelineEl.classList.add('is-unfolded');
+    }
+  }
+
+  // ---------- HERO DUST (Three.js — a library's worth of drifting motes, nothing more) ----------
+  const canvas = document.getElementById('heroDustCanvas');
+  const heroEl = document.querySelector('.hero');
+  if (canvas && heroEl && typeof THREE !== 'undefined' && !reduceMotion && window.innerWidth > 700){
+    let renderer, scene, camera, points, raf, geometry, count, speeds, t = 0;
+    let started = false;
+
+    function animate(){
+      t += 0.006;
+      const height = heroEl.clientHeight;
+      const pos = geometry.attributes.position;
+      for (let i = 0; i < count; i++){
+        pos.array[i*3 + 1] -= speeds[i] * 0.35;
+        pos.array[i*3] += Math.sin(t + i) * 0.04;
+        if (pos.array[i*3 + 1] < -height * 0.45){
+          pos.array[i*3 + 1] = height * 0.45;
+        }
+      }
+      pos.needsUpdate = true;
+      renderer.render(scene, camera);
+      raf = requestAnimationFrame(animate);
+    }
+
+    function initDust(){
+      if (started) return;
+      started = true;
+      const width = heroEl.clientWidth, height = heroEl.clientHeight;
+
+      renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:false });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(width, height);
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
+      camera.position.z = 260;
+
+      count = window.innerWidth > 1100 ? 110 : 60;
+      const positions = new Float32Array(count * 3);
+      speeds = new Float32Array(count);
+      for (let i = 0; i < count; i++){
+        positions[i*3]     = (Math.random() - 0.5) * width * 0.9;
+        positions[i*3 + 1] = (Math.random() - 0.5) * height * 0.9;
+        positions[i*3 + 2] = (Math.random() - 0.5) * 200;
+        speeds[i] = 0.06 + Math.random() * 0.14;
+      }
+      geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+      const material = new THREE.PointsMaterial({
+        color: 0xC6862E,
+        size: 2.1,
+        transparent: true,
+        opacity: 0.32,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+
+      points = new THREE.Points(geometry, material);
+      scene.add(points);
+      canvas.classList.add('is-live');
+      animate();
+
+      window.addEventListener('resize', () => {
+        const w = heroEl.clientWidth, h = heroEl.clientHeight;
+        renderer.setSize(w, h);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      });
+    }
+
+    // pause/resume with visibility so the study doesn't burn battery off-screen
+    const dustObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          initDust();
+          if (raf === undefined && renderer) animate();
+        } else if (raf) {
+          cancelAnimationFrame(raf);
+          raf = undefined;
+        }
+      });
+    }, {threshold:0.05});
+    dustObserver.observe(heroEl);
+  }
+})();
+</script>
+
+<!-- ================= STAGE 4: DEEPER IMMERSION — additive only ================= -->
+<script>
+(function stage4(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- INK BLOOM (Three.js) — a single wash of ink that dissolves into the hero, in step with the opening titles above ----------
+  const bloomCanvas = document.getElementById('inkBloomCanvas');
+  if (bloomCanvas){
+    const introIsPlaying = window.__playHeroIntro === true;
+    if (typeof THREE === 'undefined' || reduceMotion || window.innerWidth < 480 || !introIsPlaying){
+      bloomCanvas.classList.add('is-done');
+    } else {
+      const renderer = new THREE.WebGLRenderer({ canvas: bloomCanvas, alpha:true, antialias:false });
+      const heroEl = document.querySelector('.hero');
+      const w = heroEl.clientWidth, h = heroEl.clientHeight;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(w, h);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+      const geometry = new THREE.PlaneGeometry(2, 2);
+      const material = new THREE.ShaderMaterial({
+        transparent:true,
+        uniforms:{ u_time:{value:0}, u_ratio:{value:w/h} },
+        vertexShader:`
+          varying vec2 vUv;
+          void main(){ vUv = uv; gl_Position = vec4(position, 1.0); }
+        `,
+        fragmentShader:`
+          precision mediump float;
+          varying vec2 vUv;
+          uniform float u_time;
+          uniform float u_ratio;
+          void main(){
+            vec2 c = vUv - 0.5;
+            c.x *= u_ratio;
+            float dist = length(c);
+            float r = u_time * 0.62;
+            float edge = smoothstep(r, r - 0.28, dist);
+            float wobble = sin(dist * 26.0 - u_time * 5.0) * 0.015;
+            edge += wobble * smoothstep(r + 0.08, r - 0.3, dist);
+            float fade = 1.0 - smoothstep(0.55, 1.05, u_time);
+            vec3 ink = vec3(0.086, 0.098, 0.125);
+            gl_FragColor = vec4(ink, edge * fade);
+          }
+        `
+      });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      let start = null;
+      function tick(ts){
+        if (!start) start = ts;
+        const elapsed = (ts - start) / 1000;
+        material.uniforms.u_time.value = elapsed;
+        renderer.render(scene, camera);
+        if (elapsed < 1.3){
+          requestAnimationFrame(tick);
+        } else {
+          bloomCanvas.classList.add('is-done');
+          setTimeout(() => { renderer.dispose(); geometry.dispose(); material.dispose(); }, 1100);
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+  }
+
+  // ---------- FOOTER AS CLOSING PAGE: the seal presses itself into the page as you arrive ----------
+  const seal = document.getElementById('finisSeal');
+  const note = document.getElementById('finisNote');
+  if (seal){
+    if ('IntersectionObserver' in window){
+      const sealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting){
+            seal.classList.add('is-pressed');
+            sealObserver.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.5});
+      sealObserver.observe(seal);
+    } else {
+      seal.classList.add('is-pressed');
+    }
+
+    // a small, quiet discovery — activate the seal (mouse or keyboard), it presses down once
+    function pressSeal(){
+      seal.style.transform = 'rotate(-8deg) scale(0.88)';
+      setTimeout(() => { seal.style.transform = ''; }, 220);
+      if (note) note.classList.toggle('is-shown');
+    }
+    seal.addEventListener('click', pressSeal);
+    seal.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pressSeal(); }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
