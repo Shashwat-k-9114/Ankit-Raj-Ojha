@@ -38,6 +38,8 @@
   --line:#C9BEA0;
   --line-on-navy:rgba(239,232,216,0.22);
   --card:#F7F2E6;
+  --leather:#5B4130;
+  --leather-deep:#3E2C1F;
   --radius:2px;
 }
 
@@ -56,6 +58,22 @@ body{
 ::selection{background:var(--ochre); color:var(--navy-deep);}
 a{color:inherit;}
 img{max-width:100%; display:block;}
+
+/* ---------- EDITORIAL SCROLLBAR (warm paper track, aged-leather thumb, ochre on hover) ---------- */
+html{scrollbar-width:thin; scrollbar-color:var(--leather) var(--paper-deep);}
+::-webkit-scrollbar{width:11px; height:11px;}
+::-webkit-scrollbar-track{background:var(--paper-deep);}
+::-webkit-scrollbar-thumb{
+  background:var(--leather);
+  border-radius:7px;
+  border:3px solid var(--paper-deep);
+  background-clip:padding-box;
+}
+::-webkit-scrollbar-thumb:hover{
+  background:var(--ochre);
+}
+::-webkit-scrollbar-corner{background:var(--paper-deep);}
+
 
 /* ---------- PAPER GRAIN (subtle, almost invisible) ---------- */
 body::before{
@@ -117,6 +135,7 @@ p{text-wrap:pretty;}
   background:rgba(239,232,216,0.92);
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--line);
+  transform:translateZ(0);
 }
 .nav-inner{
   max-width:1120px;
@@ -159,8 +178,15 @@ p{text-wrap:pretty;}
 /* ---------- HERO ---------- */
 .hero{
   position:relative;
-  background:var(--navy);
-  color:var(--paper);
+  background:
+    radial-gradient(circle at 6% 16%, rgba(156,106,31,0.11) 0, transparent 2.6%),
+    radial-gradient(circle at 93% 10%, rgba(156,106,31,0.09) 0, transparent 2%),
+    radial-gradient(circle at 84% 78%, rgba(161,61,44,0.08) 0, transparent 2.2%),
+    radial-gradient(circle at 12% 88%, rgba(156,106,31,0.10) 0, transparent 2.4%),
+    radial-gradient(ellipse at 50% 0%, rgba(28,26,23,0.10), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(28,26,23,0.13), transparent 55%),
+    linear-gradient(150deg, #F4EEDE 0%, #EFE6D1 48%, #E7DBBE 100%);
+  color:var(--ink);
   overflow:hidden;
   padding:110px 0 90px;
 }
@@ -168,15 +194,15 @@ p{text-wrap:pretty;}
   content:"";
   position:absolute; inset:0;
   background-image:
-    repeating-linear-gradient(0deg, rgba(239,232,216,0.045) 0px, rgba(239,232,216,0.045) 1px, transparent 1px, transparent 34px),
-    repeating-linear-gradient(90deg, rgba(239,232,216,0.03) 0px, rgba(239,232,216,0.03) 1px, transparent 1px, transparent 34px);
+    repeating-linear-gradient(0deg, rgba(28,26,23,0.035) 0px, rgba(28,26,23,0.035) 1px, transparent 1px, transparent 34px),
+    repeating-linear-gradient(90deg, rgba(28,26,23,0.025) 0px, rgba(28,26,23,0.025) 1px, transparent 1px, transparent 34px);
   pointer-events:none;
 }
 .hero-inner{position:relative; max-width:1120px; margin:0 auto; padding:0 32px;}
-.hero .eyebrow{color:var(--ochre); margin-bottom:22px; display:flex; align-items:center; gap:12px;}
-.hero .eyebrow::before{content:""; width:34px; height:1px; background:var(--ochre); display:inline-block;}
+.hero .eyebrow{color:var(--ochre-deep); margin-bottom:22px; display:flex; align-items:center; gap:12px;}
+.hero .eyebrow::before{content:""; width:34px; height:1px; background:var(--ochre-deep); display:inline-block;}
 .hero h1{
-  color:var(--paper);
+  color:var(--navy);
   font-size:clamp(44px, 8vw, 92px);
   line-height:0.98;
   font-weight:600;
@@ -185,14 +211,14 @@ p{text-wrap:pretty;}
 .hero h1 em{
   font-style:italic;
   font-weight:500;
-  color:var(--paper);
-  opacity:0.55;
+  color:var(--navy);
+  opacity:0.62;
 }
 .hero-sub{
   margin-top:26px;
   max-width:52ch;
   font-size:19px;
-  color:rgba(239,232,216,0.82);
+  color:var(--ink-soft);
   font-style:italic;
 }
 .hero-stats{
@@ -200,17 +226,17 @@ p{text-wrap:pretty;}
   display:grid;
   grid-template-columns:repeat(4, auto);
   gap:0;
-  border-top:1px solid var(--line-on-navy);
+  border-top:1px solid var(--line);
 }
 .hero-stat{
   padding:20px 26px 0 0;
-  border-right:1px solid var(--line-on-navy);
+  border-right:1px solid var(--line);
 }
 .hero-stat:last-child{border-right:none;}
 .hero-stat .num{
   font-family:'Fraunces', serif;
   font-size:34px;
-  color:var(--ochre);
+  color:var(--ochre-deep);
   font-weight:600;
 }
 .hero-stat .lbl{
@@ -218,7 +244,7 @@ p{text-wrap:pretty;}
   font-size:10.5px;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:rgba(239,232,216,0.6);
+  color:var(--ink-soft);
   margin-top:4px;
 }
 
@@ -385,71 +411,89 @@ section:not(.recognition)::after{
 .books-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:28px;
-  perspective:1400px;
+  gap:44px 36px;
   padding-bottom:26px;
-  border-bottom:6px solid var(--ink);
-  box-shadow:0 10px 16px -10px rgba(28,26,23,0.35);
 }
 .book{
-  background:var(--ink);
-  border-radius:var(--radius);
-  aspect-ratio:2/3;
-  position:relative;
-  padding:26px;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  box-shadow:0 14px 30px -12px rgba(28,26,23,0.4);
-  transition:transform .5s cubic-bezier(.19,1,.22,1), box-shadow .5s ease;
-  transform-style:preserve-3d;
-  will-change:transform;
+  text-decoration:none;
+  color:inherit;
 }
-.book:hover{
-  transform:translateY(-10px) rotateX(4deg) rotateY(-6deg);
-  box-shadow:-20px 28px 40px -18px rgba(28,26,23,0.5);
+
+/* ---- the cover: an actual photograph, never a canvas for text ---- */
+.book-cover{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:2/3;
+  border-radius:var(--radius);
+  background-color:var(--ink);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  box-shadow:0 14px 26px -14px rgba(28,26,23,0.45), 0 2px 6px rgba(28,26,23,0.18);
+  transition:transform .5s cubic-bezier(.19,1,.22,1), box-shadow .5s cubic-bezier(.19,1,.22,1);
 }
-.book:active{transform:translateY(-6px) rotateX(2deg) rotateY(-3deg) scale(0.99);}
-.book::before{
-  content:"";
-  position:absolute; left:0; top:0; bottom:0; width:10px;
-  background:rgba(0,0,0,0.25);
+.book:hover .book-cover, .book:focus-visible .book-cover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 38px -16px rgba(28,26,23,0.5), 0 4px 10px rgba(28,26,23,0.22);
 }
-.book-1{background:linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);}
-.book-2{background:linear-gradient(155deg, var(--rust) 0%, #7a2c1f 100%);}
-.book-3{background:linear-gradient(155deg, var(--ochre-deep) 0%, #7a5116 100%);}
-.book-eyebrow{
+.book:active .book-cover{transform:translateY(-3px);}
+
+/* ---- the text, set beneath the cover like a museum wall label ---- */
+.book-info{
+  display:flex;
+  flex-direction:column;
+  margin-top:18px;
+}
+.book-category{
   font-family:'IBM Plex Mono', monospace;
-  font-size:10px;
-  letter-spacing:.1em;
+  font-size:10.5px;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  color:rgba(239,232,216,0.65);
+  color:var(--rust);
+  margin-bottom:8px;
 }
 .book-title{
   font-family:'Fraunces', serif;
   font-style:italic;
   font-weight:500;
-  font-size:30px;
-  color:var(--paper);
-  line-height:1.08;
-  margin-top:14px;
+  font-size:21px;
+  color:var(--ink);
+  line-height:1.22;
+  transition:color .3s ease;
 }
+.book:hover .book-title{color:var(--rust);}
 .book-meta{
   font-family:'IBM Plex Mono', monospace;
   font-size:11px;
-  color:rgba(239,232,216,0.7);
-  display:flex;
-  justify-content:space-between;
-  border-top:1px solid rgba(239,232,216,0.25);
-  padding-top:12px;
+  color:var(--ink-soft);
+  opacity:0.75;
+  margin-top:7px;
 }
 .book-desc{
   font-family:'Newsreader', serif;
+  font-style:italic;
   font-size:14.5px;
-  color:rgba(239,232,216,0.85);
+  line-height:1.55;
+  color:var(--ink-soft);
   margin-top:12px;
-  flex-grow:1;
 }
+.book-link{
+  display:inline-block;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:.04em;
+  color:var(--ink-soft);
+  margin-top:14px;
+  padding-bottom:2px;
+  border-bottom:1px solid var(--line);
+  transition:color .3s ease, border-color .3s ease;
+  align-self:flex-start;
+}
+.book:hover .book-link{color:var(--rust); border-color:var(--rust);}
+
 
 /* ---------- RECOGNITION STRIP ---------- */
 .recognition{
@@ -639,6 +683,58 @@ section:not(.recognition)::after{
 .pt-year{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft); white-space:nowrap;}
 .pt-cite{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--navy); text-align:right; white-space:nowrap;}
 
+/* ---------- PUBLICATIONS ACCORDION (reuses card-grid / pub-table / tag-chip patterns above) ---------- */
+.pub-category{border-bottom:1px solid var(--line);}
+.pub-category:first-of-type{border-top:1px solid var(--line);}
+.pub-category summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding:24px 2px 24px 34px;
+  font-family:'Fraunces', serif;
+  font-size:21px;
+  font-weight:500;
+  color:var(--navy);
+  transition:color .2s ease;
+}
+.pub-category summary:hover{color:var(--rust);}
+.pub-category summary::-webkit-details-marker{display:none;}
+.pub-category summary::before,
+.pub-category summary::after{
+  content:"";
+  position:absolute;
+  left:4px; top:50%;
+  background:var(--rust);
+  transition:transform .32s cubic-bezier(.2,.6,.2,1);
+}
+.pub-category summary::before{
+  width:14px; height:2px;
+  transform:translateY(-50%);
+}
+.pub-category summary::after{
+  left:10px;
+  width:2px; height:14px;
+  transform:translateY(-50%) rotate(0deg);
+  transform-origin:center;
+}
+.pub-category[open] summary::after{transform:translateY(-50%) rotate(90deg);}
+.pub-category-count{
+  margin-left:auto;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px;
+  font-style:normal;
+  color:var(--ink-soft);
+}
+.pub-category-body{padding:4px 2px 36px; overflow:hidden;}
+.pub-category-intro{
+  max-width:68ch;
+  color:var(--ink-soft);
+  font-size:15.5px;
+  margin:0 0 24px 2px;
+}
+
 /* ---------- EDITORIAL ROLES ---------- */
 .roles-grid{
   display:grid;
@@ -692,7 +788,9 @@ section:not(.recognition)::after{
 .contact h2{color:var(--paper); font-size:clamp(30px,5vw,48px); max-width:12ch;}
 .contact-sub{color:rgba(239,232,216,0.7); margin-top:18px; max-width:44ch; font-style:italic;}
 .contact-email{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   margin-top:34px;
   font-family:'Fraunces', serif;
   font-style:italic;
@@ -702,6 +800,7 @@ section:not(.recognition)::after{
   border-bottom:1px solid var(--ochre);
   padding-bottom:4px;
 }
+.contact-email .social-icon{width:19px; height:19px; color:var(--ochre);}
 .social-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0;}
 .social-list li{border-top:1px solid var(--line-on-navy);}
 .social-list li:last-child{border-bottom:1px solid var(--line-on-navy);}
@@ -718,7 +817,10 @@ section:not(.recognition)::after{
 }
 .social-list a .arrow{color:var(--ochre); transition:transform .15s;}
 .social-list a:hover .arrow{transform:translateX(6px);}
-.social-list .handle{color:rgba(239,232,216,0.64);}
+.social-label{display:flex; align-items:center; gap:12px;}
+.social-icon{width:17px; height:17px; flex-shrink:0; color:rgba(239,232,216,0.72); transition:color .2s ease;}
+.social-list a:hover .social-icon{color:var(--ochre);}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
 
 .footer-bottom{
   border-top:1px solid var(--line-on-navy);
@@ -1010,24 +1112,11 @@ section{padding:168px 0;}
 }
 .selected-work-title a:hover{color:var(--rust); border-color:var(--rust);}
 
-/* ---- Book cards with real cover art (additive modifier on .book, no renames) ---- */
-.book.has-cover{
-  text-decoration:none;
+/* ---- Book cards with real cover art: the image is lazy-loaded onto .book-cover itself ---- */
+.book-cover.has-cover{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-}
-.book.has-cover::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  background:linear-gradient(180deg, rgba(28,26,23,0.05) 0%, rgba(28,26,23,0.55) 55%, rgba(28,26,23,0.92) 100%);
-  pointer-events:none;
-}
-.book.has-cover > div, .book.has-cover > .book-meta{
-  position:relative;
-  z-index:1;
 }
 
 /* ---- Contact: closing-page treatment ---- */
@@ -1228,8 +1317,8 @@ section{padding:168px 0;}
   position:absolute; inset:0;
   z-index:1;
   pointer-events:none;
-  opacity:0.05;
-  mix-blend-mode:overlay;
+  opacity:0.06;
+  mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.09' numOctaves='3' seed='7'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23f)'/></svg>");
 }
 
@@ -1299,12 +1388,13 @@ section{padding:168px 0;}
   z-index:-1;
 }
 
-/* ---- Books: page thickness, spine depth, bookmark ribbon, cover-open on hover ---- */
+/* ---- Books: page thickness and bookmark ribbon, laid over the cover photograph ---- */
+.book-cover{position:relative; overflow:visible;}
 .book-pages{
   position:absolute;
   top:5px; right:-4px; bottom:5px;
   width:7px;
-  z-index:1;
+  z-index:2;
   background:repeating-linear-gradient(180deg, #EFE8D8 0px, #EFE8D8 2px, #DCD1B2 2px, #DCD1B2 3px);
   border-radius:0 2px 2px 0;
   box-shadow:2px 0 4px rgba(28,26,23,0.35);
@@ -1315,7 +1405,7 @@ section{padding:168px 0;}
   position:absolute;
   top:-7px; left:28px;
   width:11px; height:38px;
-  z-index:1;
+  z-index:2;
   background:linear-gradient(180deg, var(--ochre) 0%, var(--ochre-deep) 100%);
   clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
   box-shadow:0 3px 5px rgba(28,26,23,0.3);
@@ -1324,7 +1414,7 @@ section{padding:168px 0;}
 }
 .book:hover .book-pages{width:10px; transform:translateX(1px);}
 .book:hover .book-ribbon{transform:translateY(3px) rotate(-2deg);}
-.book:hover{box-shadow:-24px 30px 44px -18px rgba(28,26,23,0.55), inset 40px 0 60px -50px rgba(0,0,0,0.5);}
+
 
 /* ---- Discoveries: margin notes, coffee ring, library stamp, pressed flower ---- */
 .margin-note{
@@ -1439,15 +1529,6 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
        must never visibly start offset for users who've asked for no motion) ---- */
 @media (prefers-reduced-motion: reduce){
   .book.reveal{transform:none; transition:opacity .3s ease;}
-}
-
-/* ---- Lighting & depth: a faint top edge highlight, as if each book catches a little
-       overhead light — additive to the existing box-shadow, nothing removed ---- */
-.book{
-  box-shadow:0 14px 30px -12px rgba(28,26,23,0.4), inset 0 1px 0 rgba(255,255,255,0.07);
-}
-.book:hover{
-  box-shadow:-20px 28px 40px -18px rgba(28,26,23,0.5), inset 0 1px 0 rgba(255,255,255,0.1), inset 30px 0 46px -40px rgba(0,0,0,0.4);
 }
 
 /* ---- Restraint: dust reads as atmosphere, not confetti ---- */
@@ -1635,11 +1716,11 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#books">Books</a></li>
-      <li><a href="#bibliography">Bibliography</a></li>
-      <li><a href="#academic">Academic</a></li>
-      <li><a href="#editorial">Editorial</a></li>
-      <li><a href="#press">Press</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#interviews">Interviews</a></li>
+      <li><a href="#other-media">Other Media &amp; Mentions</a></li>
+      <li><a href="#blurbs">Blurbs</a></li>
     </ul>
   </div>
 </nav>
@@ -1655,36 +1736,17 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   </div>
   <div class="hero-inner hero-content">
     <div class="eyebrow">Chapra, Bihar → Roorkee → Haryana</div>
-    <h1>He used to write code.<br><em>Now he mostly writes back.</em></h1>
-    <p class="hero-sub">Poet, editor, translator, and a professor who still isn't convinced that seriousness and humour belong on opposite sides of a page. Published across twenty countries; still working out what a good line actually is.</p>
+    <h1>Ankit Raj Ojha<br><em>writer, editor, translator and academic.</em></h1>
+    <p class="hero-sub">He is the author of <em>Pinpricks</em> (2022), editor of <em>Wives</em> (2023) and <em>The Bare Bones Book of Humour</em> (2026), and a founding editor at <em>The Hooghly Review</em>.</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">20</div><div class="lbl">Countries Published</div></div>
       <div class="hero-stat"><div class="num">3</div><div class="lbl">Books Authored / Edited</div></div>
-      <div class="hero-stat"><div class="num">60+</div><div class="lbl">Poems, Stories &amp; Essays</div></div>
-      <div class="hero-stat"><div class="num">16</div><div class="lbl">Academic Publications</div></div>
+      <div class="hero-stat"><div class="num">70+</div><div class="lbl">Poems, Stories &amp; Essays</div></div>
+      <div class="hero-stat"><div class="num">7</div><div class="lbl">Academic Publications</div></div>
     </div>
   </div>
 </header>
-<section class="author-note" id="authors-note">
-  <svg class="pressed-flower" viewBox="0 0 100 100" style="top:38px; left:44px;" aria-hidden="true">
-    <g fill="none" stroke="#C6862E" stroke-width="1.1">
-      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(0 50 50)"/>
-      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(72 50 50)"/>
-      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(144 50 50)"/>
-      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(216 50 50)"/>
-      <ellipse cx="50" cy="28" rx="9" ry="16" transform="rotate(288 50 50)"/>
-      <circle cx="50" cy="50" r="5" fill="#A13D2C" stroke="none"/>
-      <path d="M50 66 C 46 78, 42 84, 34 92" stroke-width="1"/>
-    </g>
-  </svg>
-  <div class="container author-note-inner">
-    <div class="eyebrow author-note-eyebrow">Author's Note</div>
-    <!-- DRAFT — please confirm or rewrite before launch; this is Claude's best guess at his voice, not his actual words. -->
-    <p class="author-note-text">I did not set out to become a poet. I set out, at various points, to be an engineer, a rock musician, and — for one serious year — a man who understood spreadsheets. None of it quite took, and somewhere in the failing I ended up reading Kurt Vonnegut for a PhD and writing poems in the margins of the research. I still teach. I still think the funniest line in a poem can carry as much weight as the saddest one, and I have never fully forgiven the people who disagree. This site is where the two halves live together — the scholar footnoting Vonnegut's tricksters, and the man who once got nominated for a prize for a poem about dragons and meant every word of it.</p>
-    <div class="author-note-sign">— A.R.O.</div>
-  </div>
-</section>
-<div class="chapter-divider on-navy" style="background:var(--navy); padding:0 0 0px;"><span class="rule"></span><span class="mark">❧</span><span class="rule"></span></div>
+<div class="chapter-divider" style="padding:0 0 0px;"><span class="rule"></span><span class="mark">❧</span><span class="rule"></span></div>
 
 <section id="about">
   <div class="margin-note margin-note-about" style="top:210px; right:8px; max-width:13ch;" aria-hidden="true">still not sure<br>about "footnote"</div>
@@ -1698,12 +1760,12 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
     <div class="about-grid">
       <div class="monogram">ARO</div>
       <div class="about-text">
-        <p>Ankit Raj Ojha writes from Chapra, Bihar, by way of a few other places that shaped him more than he expected. His poems, stories, essays, and criticism have appeared in twenty countries — the Asahi Shimbun in Japan, the San Antonio Review in Uruguay, and a long list of small magazines in between that mattered more to him than either.</p>
-        <p>He worked briefly as an analyst at Infosys and fronted rock bands in Delhi NCR, Mysore, and Bhubaneswar before either could talk him out of literature. What survived from that decade is a permanent suspicion of anything that takes itself too seriously — including, occasionally, his own PhD. As one early reader of his work put it, his lines flirt with the mirthful even while a mind searching for something steadier moves underneath.</p>
-        <p>That PhD — in English, from IIT Roorkee — spent several years in the company of Kurt Vonnegut: his tricksters, his myths, his refusal to decide whether the universe is a joke or a tragedy. Ankit is still not sure Vonnegut ever decided either, which is probably the point. He now teaches English with the Department of Higher Education, Haryana, where the same argument continues in front of a classroom instead of a dissertation committee.</p>
-        <p>Editing has become a second, quieter vocation — as founding editor of <em>The Hooghly Review</em>, consulting editor with Routledge and Springer Nature, and guest editor at <em>Essence and Critique</em> in Turkey. His poem "How to tame your dragons" was nominated for both the Pushcart Prize and Best of the Net, and he placed in the top 1% of the 2023 Wergle Flomp Humour Poetry Contest — an award for bad poetry, on purpose, which he lists here with more pride than the nominations.</p>
+        <p>Ankit was born and raised in Chapra, Bihar, India. An engineering graduate, he worked as a software engineer with Infosys Limited before doing a master's degree in English, and a PhD in English from IIT Roorkee.</p>
+        <p>Ankit is currently based in Karnal where he works as an assistant professor of English with the Department of Higher Education, Haryana. His poetry, short fiction, non-fiction and research articles have appeared in journals, magazines and anthologies based in twenty countries.</p>
+        <p>Ankit is the author of <em>Pinpricks</em> (2022) and editor of <em>Wives</em> (2023) and <em>The Bare Bones Book of Humour</em> (2026). He is also a founding editor of the EBSCO-indexed magazine, <em>The Hooghly Review</em>, has guest-edited a volume of <em>Essence &amp; Critique: Journal of Literature and Drama Studies</em>, and is a consulting editor with several Routledge and Springer Nature journals.</p>
+        <p>Ankit won the 2023 Briefly Think Essay Prize, was a finalist in the Sundress 2023 Broadside Contest, and made the top 1% in the Wergle Flomp Humour Poetry Contest 2023.</p>
         <div class="facts">
-          <div class="fact"><span class="k">Based in</span><span class="v">Haryana, India</span></div>
+          <div class="fact"><span class="k">Based in</span><span class="v">Karnal, Haryana</span></div>
           <div class="fact"><span class="k">PhD</span><span class="v">IIT Roorkee, English</span></div>
           <div class="fact"><span class="k">Position</span><span class="v">Asst. Professor of English, DHE Haryana</span></div>
           <div class="fact"><span class="k">Editor</span><span class="v">Founding Editor, The Hooghly Review</span></div>
@@ -1725,34 +1787,43 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
       <div class="count">3 titles · 2022–2026</div>
     </div>
     <div class="books-grid">
-      <a class="book book-1 has-cover" href="https://www.hawakal.com/books/english-books/poetry-english-books/pinpricks-poems/" target="_blank" rel="noopener" data-bg="https://www.hawakal.com/wp-content/uploads/2022/06/Ankit-Front.jpeg">
-        <span class="book-pages" aria-hidden="true"></span>
-        <span class="book-ribbon" aria-hidden="true"></span>
-        <div>
-          <div class="book-eyebrow">Poetry Collection · Hawakal, 2022</div>
+      <a class="book book-1" href="https://www.hawakal.com/books/english-books/poetry-english-books/pinpricks-poems/" target="_blank" rel="noopener">
+        <span class="book-cover has-cover" data-bg="https://www.hawakal.com/wp-content/uploads/2022/06/Ankit-Front.jpeg" role="img" aria-label="Cover of Pinpricks">
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-ribbon" aria-hidden="true"></span>
+        </span>
+        <div class="book-info">
+          <div class="book-category">Poetry Collection</div>
           <div class="book-title">Pinpricks</div>
-          <div class="book-desc">A first collection — poems about migration, memory, and the particular ache of a family that doesn't talk about the things it feels most. "His lines flirt with the mirthful," wrote Sanjeev Sethi, "but behind his jocular moorings lies a mind searching for soothers." Reviewed in Kitaab, Tint Journal, and Outlook India.</div>
+          <div class="book-meta">2022 · Hawakal Publishers</div>
+          <div class="book-desc">A first collection — poems about migration, memory, and the particular ache of a family that doesn't talk about the things it feels most. Reviewed in Kitaab, Tint Journal, and Outlook India.</div>
+          <span class="book-link">View Book →</span>
         </div>
-        <div class="book-meta"><span>Poems</span><span>Hawakal Publishers</span></div>
       </a>
-      <a class="book book-3 has-cover" href="https://www.hawakal.com/2023/10/16/wives/" target="_blank" rel="noopener" data-bg="https://www.hawakal.com/wp-content/uploads/2023/10/Wives-book-front-cover.jpg">
-        <span class="book-pages" aria-hidden="true"></span>
-        <div>
-          <div class="book-eyebrow">Edited Anthology · Hawakal, 2023</div>
+      <a class="book book-3" href="https://www.hawakal.com/2023/10/16/wives/" target="_blank" rel="noopener">
+        <span class="book-cover has-cover" data-bg="https://www.hawakal.com/wp-content/uploads/2023/10/Wives-book-front-cover.jpg" role="img" aria-label="Cover of Wives">
+          <span class="book-pages" aria-hidden="true"></span>
+        </span>
+        <div class="book-info">
+          <div class="book-category">Edited Anthology</div>
           <div class="book-title">Wives</div>
-          <div class="book-desc">An anthology he edited rather than wrote — forty-seven poets from twelve countries, writing toward a single shared theme. Editing this, he has said, taught him more about restraint than writing his own book did.</div>
+          <div class="book-meta">2023 · Hawakal Publishers</div>
+          <div class="book-desc">An anthology he edited rather than wrote — poets writing toward a single shared theme. Reviewed in Different Truths and previewed in Café Dissensus.</div>
+          <span class="book-link">View Book →</span>
         </div>
-        <div class="book-meta"><span>Anthology</span><span>Hawakal Publishers</span></div>
       </a>
-      <a class="book book-2 has-cover" href="https://barebonespublishing.in/product/the-bare-bones-book-of-humour/" target="_blank" rel="noopener" data-bg="https://barebonespublishing.in/wp-content/uploads/2025/12/The-Bare-Bones-Book-of-Humour-1.png">
-        <span class="book-pages" aria-hidden="true"></span>
-        <span class="book-ribbon" aria-hidden="true" style="background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); left:auto; right:30px;"></span>
-        <div>
-          <div class="book-eyebrow">Edited Anthology · Bare Bones, 2026</div>
+      <a class="book book-2" href="https://barebonespublishing.in/product/the-bare-bones-book-of-humour/" target="_blank" rel="noopener">
+        <span class="book-cover has-cover" data-bg="https://barebonespublishing.in/wp-content/uploads/2025/12/The-Bare-Bones-Book-of-Humour-1.png" role="img" aria-label="Cover of The Bare Bones Book of Humour">
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-ribbon" aria-hidden="true" style="background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); left:auto; right:30px;"></span>
+        </span>
+        <div class="book-info">
+          <div class="book-category">Edited Anthology</div>
           <div class="book-title">The Bare Bones Book of Humour</div>
-          <div class="book-desc">Twenty-four writers, eight countries, one shared conviction: that comedy is not a lesser form of seriousness. Edited and introduced by Ankit, with a foreword by Mike Nagel. "A timely reminder," wrote Tabish Khair, "that humour needs to be taken very seriously."</div>
+          <div class="book-meta">2026 · Bare Bones Publishing</div>
+          <div class="book-desc">Twenty-four writers, eight countries, one shared conviction: that comedy is not a lesser form of seriousness. Edited and introduced by Ankit. Reviewed in Scroll.in, The Wire, Cha: An Asian Literary Journal, and more.</div>
+          <span class="book-link">View Book →</span>
         </div>
-        <div class="book-meta"><span>Short Fiction</span><span>Bare Bones Publishing</span></div>
       </a>
     </div>
     <p style="margin-top:20px; font-size:12.5px; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;">Cover images via Hawakal Publishers and Bare Bones Publishing.</p>
@@ -1806,7 +1877,7 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
         <h2>Selected Works</h2>
       </div>
     </div>
-    <p class="selected-works-intro">A few worth starting with, out of the sixty or so.</p>
+    <p class="selected-works-intro">A few worth starting with, out of the eighty or so.</p>
     <div class="selected-works-list">
       <div class="selected-work">
         <span class="selected-work-year">2024</span>
@@ -1839,56 +1910,61 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
         <span class="selected-work-note">On being from somewhere, and then somewhere else</span>
       </div>
     </div>
-    <div class="selected-works-more"><a href="#bibliography">View the full bibliography ↓</a></div>
+    <div class="selected-works-more"><a href="#publications">View the full bibliography ↓</a></div>
   </div>
 </section>
 
-<section id="bibliography">
+<section id="publications">
+  <div class="library-stamp" style="bottom:64px; right:40px;" aria-hidden="true">Ex Libris<br>A.R.O.<br>Est. 2021</div>
   <div class="container">
     <div class="section-head">
       <div>
         <div class="eyebrow">The Catalogue</div>
-        <h2>Bibliography</h2>
+        <h2>Publications</h2>
       </div>
-      <div class="count" id="bibCount">60+ works across 20 countries</div>
+      <div class="count" id="pubCount">works across twenty countries</div>
     </div>
-    <div class="filters" id="filters">
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn" data-filter="poem" aria-pressed="false">Poetry</button>
-      <button class="filter-btn" data-filter="fiction" aria-pressed="false">Fiction</button>
-      <button class="filter-btn" data-filter="essay" aria-pressed="false">Essays &amp; Reviews</button>
-      <button class="filter-btn" data-filter="interview" aria-pressed="false">Interviews &amp; Media</button>
-    </div>
-    <div class="card-grid" id="cardGrid"></div>
-  </div>
-</section>
 
-<section id="academic" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="library-stamp" style="bottom:64px; right:40px;" aria-hidden="true">Ex Libris<br>A.R.O.<br>Est. 2021</div>
+    <details class="pub-category" open>
+      <summary><span class="pub-category-name">Fiction &amp; Non-fiction</span><span class="pub-category-count" id="count-fiction"></span></summary>
+      <div class="pub-category-body"><div class="card-grid" id="cardGrid-fiction"></div></div>
+    </details>
 
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">The Scholar</div>
-        <h2>Academic Work</h2>
+    <details class="pub-category">
+      <summary><span class="pub-category-name">Notes &amp; Essays</span><span class="pub-category-count" id="count-essays"></span></summary>
+      <div class="pub-category-body"><div class="card-grid" id="cardGrid-essays"></div></div>
+    </details>
+
+    <details class="pub-category">
+      <summary><span class="pub-category-name">Translations</span><span class="pub-category-count" id="count-translations"></span></summary>
+      <div class="pub-category-body"><div class="card-grid" id="cardGrid-translations"></div></div>
+    </details>
+
+    <details class="pub-category">
+      <summary><span class="pub-category-name">Poetry</span><span class="pub-category-count" id="count-poetry"></span></summary>
+      <div class="pub-category-body"><div class="card-grid" id="cardGrid-poetry"></div></div>
+    </details>
+
+    <details class="pub-category">
+      <summary><span class="pub-category-name">Academic Writings</span><span class="pub-category-count" id="count-academic"></span></summary>
+      <div class="pub-category-body">
+        <p class="pub-category-intro">Ankit's doctoral research at <strong>IIT Roorkee</strong> spent several years arguing with <strong>Kurt Vonnegut</strong> — specifically with his tricksters, the myths he half-believed and half-mocked, and his stubborn refusal to say whether human beings are worth saving.</p>
+        <div class="tags-row" style="margin-bottom:26px;">
+          <span class="tag-chip">Postmodern Fiction</span>
+          <span class="tag-chip">Kurt Vonnegut Studies</span>
+          <span class="tag-chip">Archetypal &amp; Myth Theory</span>
+          <span class="tag-chip">Psychoanalytic Theory</span>
+          <span class="tag-chip">Comparative Literature</span>
+          <span class="tag-chip">Posthumanism</span>
+        </div>
+        <table class="pub-table">
+          <thead>
+            <tr><th>Article</th><th>Venue</th></tr>
+          </thead>
+          <tbody id="academicBody"></tbody>
+        </table>
       </div>
-      <div class="count">16 publications</div>
-    </div>
-    <p class="academic-intro">Ankit's doctoral research at <strong>IIT Roorkee</strong> spent several years arguing with <strong>Kurt Vonnegut</strong> — specifically with his tricksters, the myths he half-believed and half-mocked, and his stubborn refusal to say whether human beings are worth saving. The work has appeared in <strong>Critique: Studies in Contemporary Fiction</strong>, <strong>The Explicator</strong>, <strong>ANQ</strong>, <strong>Scrutiny2</strong>, and <strong>Partial Answers</strong>, among others. He still isn't sure he's won the argument.</p>
-    <div class="tags-row">
-      <span class="tag-chip">Postmodern Fiction</span>
-      <span class="tag-chip">Kurt Vonnegut Studies</span>
-      <span class="tag-chip">Archetypal &amp; Myth Theory</span>
-      <span class="tag-chip">Psychoanalytic Theory</span>
-      <span class="tag-chip">Comparative Literature</span>
-      <span class="tag-chip">Posthumanism</span>
-    </div>
-    <table class="pub-table">
-      <thead>
-        <tr><th>Article</th><th>Venue</th><th>Year</th><th style="text-align:right;">Citations</th></tr>
-      </thead>
-      <tbody id="academicBody"></tbody>
-    </table>
+    </details>
   </div>
 </section>
 
@@ -1936,17 +2012,56 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   </div>
 </section>
 
-<section id="press" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section id="reviews" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">What Others Have Said</div>
+        <h2>Reviews</h2>
+      </div>
+      <div class="count" id="reviewsCount">of Pinpricks, Wives &amp; The Bare Bones Book of Humour</div>
+    </div>
+    <div class="card-grid" id="cardGrid-reviews"></div>
+  </div>
+</section>
+
+<section id="interviews">
   <div class="coffee-ring" style="top:56px; right:64px;" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head">
       <div>
         <div class="eyebrow">In His Own Words</div>
-        <h2>Press &amp; Interviews</h2>
+        <h2>Interviews</h2>
       </div>
       <div class="count">Selected conversations</div>
     </div>
     <div class="press-list" id="pressList"></div>
+  </div>
+</section>
+
+<section id="other-media" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Elsewhere</div>
+        <h2>Other Media &amp; Mentions</h2>
+      </div>
+      <div class="count" id="otherMediaCount">Anthologies, audio, and a few nice surprises</div>
+    </div>
+    <div class="card-grid" id="cardGrid-other-media"></div>
+  </div>
+</section>
+
+<section id="blurbs">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Words for Other People's Books</div>
+        <h2>Blurbs</h2>
+      </div>
+      <div class="count" id="blurbsCount">Praise written for other writers' work</div>
+    </div>
+    <div class="card-grid" id="cardGrid-blurbs"></div>
   </div>
 </section>
 
@@ -1960,16 +2075,17 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
         <div class="eyebrow" style="color:var(--ochre);">Get in Touch</div>
         <h2>If you've read this far, you already know more about me than most people bother to.</h2>
         <p class="contact-sub">Get in touch about writing, editing, translation, or an argument about Vonnegut. I answer most emails, eventually, and always the funny ones first.</p>
-        <a class="contact-email" href="mailto:hello@ankitrajojha.com">hello@ankitrajojha.com</a>
+        <a class="contact-email" href="mailto:hello@ankitrajojha.com"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.2" y="4.5" width="15.6" height="11" rx="1.6" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M2.6 5.3l7.4 5.6 7.4-5.6" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>hello@ankitrajojha.com</a>
         <div class="contact-epigraph">Every page ends somewhere. This one just ends here.</div>
       </div>
       <ul class="social-list">
-        <li><a href="https://twitter.com/ankit_raj01" target="_blank" rel="noopener"><span>X / Twitter <span class="handle">@ankit_raj01</span></span><span class="arrow">→</span></a></li>
-        <li><a href="https://www.instagram.com/ankitrajojha1/" target="_blank" rel="noopener"><span>Instagram <span class="handle">@ankitrajojha1</span></span><span class="arrow">→</span></a></li>
-        <li><a href="#" onclick="return false;"><span>Bluesky <span class="handle">@ankitrajojha.bsky.social</span></span><span class="arrow">→</span></a></li>
-        <li><a href="#" onclick="return false;"><span>YouTube <span class="handle">Channel</span></span><span class="arrow">→</span></a></li>
-        <li><a href="#" onclick="return false;"><span>ORCID <span class="handle">Researcher ID</span></span><span class="arrow">→</span></a></li>
-        <li><a href="#" onclick="return false;"><span>ResearchGate <span class="handle">Ankit Raj</span></span><span class="arrow">→</span></a></li>
+        <li><a href="https://twitter.com/ankit_raj01" target="_blank" rel="noopener"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 2.5l15 15M17.5 2.5l-15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>X <span class="sr-only">— @ankit_raj01</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4c-1.6-2-4.4-3-6.2-1.6C2 3.6 2 6 3.4 7.8 5 9.8 8 12 10 15c2-3 5-5.2 6.6-7.2C18 6 18 3.6 16.2 2.4 14.4 1 11.6 2 10 4z" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linejoin="round"/></svg>Bluesky <span class="sr-only">— @ankitrajojha.bsky.social</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4.5" width="16" height="11" rx="2.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M8.3 7.8l4.6 2.7-4.6 2.7z" fill="currentColor"/></svg>YouTube <span class="sr-only">— Channel</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.3" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="10" cy="6.6" r="0.9" fill="currentColor"/><line x1="10" y1="9" x2="10" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>ORCiD <span class="sr-only">— Researcher ID</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="6.5" r="2.3" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="14.5" cy="7" r="2.3" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="9.5" cy="14" r="2.3" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7.7 8.1l1.1 4M12.6 8.6l-2 3.7" stroke="currentColor" stroke-width="1.1"/></svg>ResearchGate <span class="sr-only">— Ankit Raj</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="3" width="12" height="14" rx="1.4" stroke="currentColor" stroke-width="1.3" fill="none"/><line x1="6.6" y1="7" x2="13.4" y2="7" stroke="currentColor" stroke-width="1.1"/><line x1="6.6" y1="10" x2="13.4" y2="10" stroke="currentColor" stroke-width="1.1"/><line x1="6.6" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="1.1"/></svg>Scopus Author ID <span class="sr-only">— Profile</span></span><span class="arrow">→</span></a></li>
+        <li><a href="#" onclick="return false;"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.3" stroke="currentColor" stroke-width="1.3" fill="none"/><ellipse cx="10" cy="10" rx="3" ry="7.3" stroke="currentColor" stroke-width="1.1" fill="none"/><line x1="2.7" y1="10" x2="17.3" y2="10" stroke="currentColor" stroke-width="1.1"/></svg>Web of Science <span class="sr-only">— Profile</span></span><span class="arrow">→</span></a></li>
       </ul>
     </div>
     <div class="footer-bottom">
@@ -2024,96 +2140,147 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
-// ---------- DATA ----------
-const publications = [
-  {type:'poem', title:'haiku', venue:'The Asahi Shimbun', country:'Japan', year:'2024'},
-  {type:'fiction', title:'The Boys Who Lived', venue:'The Brussels Review', country:'Belgium', year:'2025'},
-  {type:'fiction', title:'Sonam Gupta Is a Cheater', venue:'The Piker Press', country:'USA', year:'2025', link:'https://www.pikerpress.com/article/10989/sonam-gupta-is-a-cheater'},
-  {type:'fiction', title:"The Engineer's Tale", venue:'BULL', country:'USA', year:'2023'},
-  {type:'fiction', title:"The Curious Case of François Bereaud's Belly Button", venue:'MEARI', country:'USA', year:'2023'},
-  {type:'poem', title:'Mahanadi', venue:'Doubleback Review', country:'USA', year:'2023'},
-  {type:'essay', title:"Review of Pinpricks (by Pritikana Karmakar)", venue:'Tint Journal', country:'Austria', year:'2023'},
-  {type:'poem', title:'A Song for Sonagachi', venue:'Porch Literary Magazine', country:'Indonesia', year:'2023'},
-  {type:'poem', title:'Reflections Upon Visiting the Old Cemetery in Roorkee', venue:'All My Relations', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9457/reflections-upon-visiting-the-old-cemetery-in-roorkee'},
-  {type:'poem', title:'The thing with thunderbolts', venue:'The Wee Sparrow Poetry Press', country:'Spain', year:'2023'},
-  {type:'essay', title:'Review of Pinpricks (by Shivalika Agarwal)', venue:'Outlook India', country:'India', year:'2023'},
-  {type:'poem', title:'The Boy Next Door', venue:'Ink Sweat & Tears', country:'England', year:'2023'},
-  {type:'poem', title:'Halāhal', venue:'The Honest Ulsterman', country:'Northern Ireland', year:'2023'},
-  {type:'poem', title:'Span', venue:'Poetry Wales', country:'Wales', year:'2023'},
-  {type:'poem', title:'Scales', venue:'Poetry Scotland', country:'Scotland', year:'2023'},
-  {type:'poem', title:'Dear Poet', venue:'JAKE', country:'USA', year:'2023'},
-  {type:'poem', title:'Resident Alien', venue:'The Chakkar', country:'India', year:'2023', link:'https://www.thechakkar.com/home/residentalien'},
-  {type:'poem', title:'Bookkeeping; Of Humans; Inheritance; For Papa; Resurgence; On Love', venue:'Dreich', country:'Scotland', year:'2022'},
-  {type:'poem', title:'On Reading; On Writing; Portrait of the Artist as a Lover; Replay; Notification; Poets Anonymous', venue:'Dreich', country:'Scotland', year:'2022'},
-  {type:'poem', title:'Reflections…; The Infidel; The Barrel', venue:'Close Encounters in War Journal', country:'Italy', year:'2022'},
-  {type:'poem', title:'How to tame your dragons', venue:'Porcupine Literary', country:'USA', year:'2024'},
-  {type:'interview', title:'Daniel Clark in conversation with Ankit Raj Ojha', venue:'Briefly Write', country:'England', year:'2023'},
-  {type:'essay', title:'Review of Pinpricks (by Dr Shyamasri Maji)', venue:'Kitaab', country:'Singapore', year:'2023'},
-  {type:'poem', title:'Exchange; Cusp; Delhi', venue:'San Antonio Review', country:'Uruguay', year:'2022'},
-  {type:'fiction', title:'The Banality of Indifference', venue:'Stanchion', country:'USA', year:'2022'},
-  {type:'interview', title:'Panel: The Magic of Maths and Science', venue:'Tell Me Your Story', country:'India', year:'2022'},
-  {type:'essay', title:'Becoming Poetry', venue:'Briefly Write', country:'England', year:'2023'},
-  {type:'poem', title:'Bookkeeping', venue:'miniMag', country:'China / Thailand', year:'2022'},
-  {type:'essay', title:'Review of Water Has Many Colors (Kiriti Sengupta)', venue:'Indian Literature — Sahitya Akademi', country:'India', year:'2022'},
-  {type:'essay', title: "Review of Strokes of Solace (Sanjeev Sethi)", venue:'The Hooghly Review, Issue 1', country:'India', year:'2022'},
-  {type:'essay', title:"Review of Strokes of Solace (Sanjeev Sethi)", venue:'Ink Sweat & Tears', country:'England', year:'2022'},
-  {type:'poem', title:'The Boy Next Door', venue:'Worcestershire Acute Hospitals Charity Anthology: Hope & Joy', country:'England', year:'2022'},
-  {type:'interview', title:'"A Word?" Wednesday with Kellie Scott-Reed', venue:'Roi Fainéant Press', country:'USA', year:'2022'},
-  {type:'poem', title:'Palate', venue:'Illustrated by Jason Novak', country:'USA', year:'2022'},
-  {type:'poem', title:'Dream Publication; Resurgence; A Silent Street Sermon; Replay; Poets Anonymous', venue:'Outlook India', country:'India', year:'2022'},
-  {type:'poem', title:'Inheritance', venue:'The Bayou Review — Univ. of Houston-Downtown', country:'USA', year:'2022'},
-  {type:'poem', title:'Mahanadi', venue:'Native Skin', country:'USA', year:'2022'},
-  {type:'poem', title:'Essential Services', venue:'Roi Fainéant Press', country:'USA', year:'2022'},
-  {type:'fiction', title:"Tantan Chacha's Brand New Dragon Balls", venue:'The Broadkill Review', country:'USA', year:'2022'},
-  {type:'poem', title:'Morning; Scrutiny; Happily Ever After', venue:'Setu Bilingual', country:'USA', year:'2022'},
-  {type:'poem', title:'Portrait of the Artist as a Lover', venue:'The Piker Press', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9460/portrait-of-the-artist-as-a-lover'},
-  {type:'poem', title:'On Writing', venue:'The Piker Press', country:'USA', year:'2022', link:'https://www.pikerpress.com/article/9459/on-writing'},
-  {type:'poem', title:'On Reading', venue:'The Piker Press', country:'USA', year:'2023', link:'https://www.pikerpress.com/article/9458/on-reading'},
-  {type:'poem', title:'Falling in Love', venue:'The Piker Press', country:'USA', year:'2023', link:'https://www.pikerpress.com/article/9461/falling-in-love'},
-  {type:'poem', title:'How to come back from the dead', venue:'The Martello Journal', country:'Ireland', year:'2021'},
-  {type:'poem', title:'The Infidel', venue:"The Bitchin' Kitsch", country:'USA', year:'2021'},
-  {type:'poem', title:'Notification', venue:'Loft Books', country:'England', year:'2021'},
-  {type:'essay', title:'Twitterature Review', venue:'Loft Books', country:'England', year:'2021'},
-  {type:'poem', title:"Rorschach's Journal", venue:'Cajun Mutt Press', country:'USA', year:'2021'},
-  {type:'poem', title:'Cavities; Circle; Supposedly Stolen Lives', venue:'A Thin Slice of Anxiety', country:'USA', year:'2021'},
-  {type:'poem', title:'The Boy Next Door', venue:'The Dillydoun Review', country:'USA', year:'2021'},
-  {type:'poem', title:'Mahanadi; Reflections…; Essential Services', venue:'Amity: Peace Poems — Hawakal', country:'India', year:'2021'},
-  {type:'poem', title:'Palate; Generation Gap', venue:'Dreich Planet #1 India', country:'Scotland', year:'2021'},
-  {type:'poem', title:'Home', venue:'Paddler Press, Vol. 5', country:'Canada', year:'2021'},
-  {type:'poem', title:'Home', venue:'One Minute Poems: An Audio Anthology — Rancid Idols Productions', country:'Northern Ireland', year:'2021'},
-  {type:'fiction', title:'The Life and Times of Suku and Dukhu', venue:'Roi Fainéant Press', country:'USA', year:'2021'},
-  {type:'poem', title:'Portrait of a Lady Taken Too Soon', venue:'Brave Voices Magazine', country:'USA', year:'2021'},
-  {type:'poem', title:'No, Thanks!', venue:'Trouvaille Review', country:'USA', year:'2021'},
-  {type:'poem', title:'Pride', venue:'Streetcake Magazine', country:'England', year:'2021'},
-  {type:'poem', title:'Dinner tastes better than philosophy; I am spending myself in instalments; Generation Gap', venue:'Roi Fainéant Press', country:'USA', year:'2021'},
-  {type:'poem', title:'Every time I get my pump broken', venue:'Bullshit Lit', country:'USA', year:'2021'},
-  {type:'poem', title:'Manufactured Love', venue:'Discretionary Love', country:'USA', year:'2021'},
+// ---------- DATA (canonical — from Dr. Ojha's July 2026 publication list) ----------
+const fictionNonfiction = [
+  {title:"Tantan Chacha's Brand-New Dragon Balls", venue:'The Broadkill Review · The Belfast Review', country:'USA / Northern Ireland'},
+  {title:'The Boys Who Lived', venue:'The Brussels Review · The Piker Press', country:'Belgium / USA'},
+  {title:'Time Bomb Down the Drain', venue:'The Madrid Review', country:'Spain'},
+  {title:'The Family Man', venue:'My India, My Gods Vol. 1 (ed. Sahana Ahmed, Bare Bones)', country:'India'},
+  {title:'Sonam Gupta is a Cheater', venue:'Loft Books · The Piker Press', country:'England / USA', link:'https://www.pikerpress.com/article/10989/sonam-gupta-is-a-cheater'},
+  {title:'सोनम गुप्ता बेवफ़ा है', venue:'प्रतिज्ञान — वार्षिक संचयन २०२६ (प्रतिज्ञान प्रकाशन)', country:'भारत'},
+  {title:'A Man of Culture', venue:'The Bare Bones Book of Humour (ed. Ankit Raj Ojha, Bare Bones)', country:'India'},
+  {title:"The Engineer's Tale", venue:'BULL', country:'USA'},
 ];
 
-const academic = [
-  {title:'The Hero at a Thousand Places: Kurt Vonnegut\u2019s Slaughterhouse-Five as Anti-Monomyth', venue:'Critique: Studies in Contemporary Fiction, 62(2)', year:'2021', cite:7},
-  {title:'Dissecting the Doubtful Darwin: Kurt Vonnegut\u2019s Humanist Posthumanism in Gal\u00e1pagos', venue:'Scrutiny2: Issues in English Studies in Southern Africa, 26(1)', year:'2022', cite:3},
-  {title:'Finding "Bluebeard" in Kurt Vonnegut\u2019s Bluebeard', venue:'ANQ: A Quarterly Journal of Short Articles, Notes and Reviews, 36(1)', year:'2023', cite:2},
-  {title:'"Trick or Treat!": The Trickster Figure in God Bless You, Mr Rosewater and Slapstick', venue:'The Explicator, 79(4)', year:'2021', cite:1},
-  {title:'"Playing God, Are We?": The Cosmogonic Concoction in Kurt Vonnegut\u2019s Gal\u00e1pagos', venue:'Critique: Studies in Contemporary Fiction', year:'2022', cite:0},
-  {title:'The Painter and the Muse: Archetypes, Complexes and the Anti-Jungian Quest for Mother in Bluebeard', venue:'Partial Answers: Journal of Literature and the History of Ideas, 21(2)', year:'2023', cite:0},
-  {title:'Review of Wrappings in Bespoke by Sanjeev Sethi', venue:'Kavya Bharati, 35', year:'2023', cite:0},
-  {title:'Sermons on Joint: Bob Marley, Bokonon and the Religio-lyrical Affair with State Apparatuses', venue:'Dogmas in Literature and Literary Missionary (book chapter)', year:'2023', cite:0},
-  {title:'Review of Water Has Many Colors by Kiriti Sengupta', venue:'Indian Literature, 66(2) — Sahitya Akademi', year:'2022', cite:0},
-  {title:'A Portrait of the Artist as an Old Man: Bluebeard as an Anti-Jungian Mother Quest', venue:'Conference Paper', year:'2022', cite:0},
-  {title:'The Devil with Many Faces: Reading Deviants as Tricksters in Vonnegut\u2019s Fiction', venue:'Conference Paper', year:'2021', cite:0},
-  {title:'Memory, Artifice and the Indian Oedipus in A.K. Ramanujan\u2019s "Ecology"', venue:'Conference Paper', year:'2021', cite:0},
-  {title:'A Hero for All Seasons? Rethinking the Hero Quest Narrative in Vonnegut\u2019s Postmodern Fiction', venue:'Conference Paper', year:'2021', cite:0},
-  {title:'Of War and Forgetting: Massacres, Memory, and Trauma in Vonnegut\u2019s Fiction', venue:'Conference Paper', year:'2021', cite:0},
-  {title:'And Pastures New: Ecology, Cosmogony and Post-Anthropocene Utopia in Gal\u00e1pagos', venue:'Conference Paper', year:'2021', cite:0},
-  {title:'Food, Memory, Identity and the Female Hero Quest in Laura Esquivel\u2019s Como agua para chocolate', venue:'Conference Paper', year:'2021', cite:0},
+const notesEssays = [
+  {title:'Stronger than Fiction (Foreword)', venue:'The Bare Bones Book of Speculative Fiction (ed. Tejaswinee Roychowdhury, Bare Bones)', country:'India'},
+  {title:'A Series of Un-serious Events (Introduction)', venue:'The Bare Bones Book of Humour (ed. Ankit Raj Ojha, Bare Bones)', country:'India'},
+  {title:'Becoming Poetry', venue:'Briefly Write', country:'England'},
+  {title:"Editor's Note, Issue 4", venue:'The Hooghly Review', country:'India'},
+  {title:"Editor's Note, Issue 3", venue:'The Hooghly Review', country:'India'},
+  {title:"Editor's Note, Issue 2", venue:'The Hooghly Review', country:'India'},
+  {title:"Editor's Note, Issue 1", venue:'The Hooghly Review', country:'India'},
+  {title:"Editor's Note, Wee Hooghly #1", venue:'The Hooghly Review', country:'India'},
 ];
 
-const press = [
-  {date:'Feb 2026', title:'Ankit Raj Ojha in Conversation with Ankush Banerjee', outlet:'Usawa Literary Review — Matchbox', link:'https://usawa.in/bookshelf/the-bare-bones-book-of-humour/'},
-  {date:'Jan 2026', title:'In Conversation with Ankit Raj Ojha', outlet:'Bare Bones Publishing — Blog', link:'https://barebonespublishing.in/2026/01/25/in-conversation-with-ankit-raj-ojha/'},
-  {date:'2023', title:'Interview: Daniel Clark in Conversation with Ankit Raj Ojha', outlet:'Briefly Write, England', link:'https://brieflywrite.com/2023/06/23/conversation-with-ankit-raj-ojha/'},
-  {date:'2022', title:'"A Word?" Wednesday with Kellie Scott-Reed and Ankit Raj Ojha', outlet:'Roi Fainéant Press, USA'},
+const translations = [
+  {title:'God Bless the Pandit', venue:'Out of Print', country:'India', link:'https://outofprintmagazine.co.in/2026/07/05/god-bless-the-pandit/'},
+  {title:"Had You Changed the Killer's Name (forthcoming)", venue:'Matchbox by Usawa', country:'India'},
+];
+
+const poetry = [
+  {title:'Span', venue:'Poetry Wales', country:'Wales'},
+  {title:'Scales', venue:'Poetry Scotland', country:'Scotland'},
+  {title:'Nightmare City', venue:'Penn Journal of Arts and Sciences, University of Pennsylvania', country:'USA'},
+  {title:'Halāhal', venue:'The Honest Ulsterman', country:'Northern Ireland'},
+  {title:'Son of a Poet', venue:'The Seventh Quarry', country:'Wales'},
+  {title:'Nocturne', venue:'Poetry Bus', country:'Ireland'},
+  {title:'How to tame your dragons', venue:'Porcupine Literary', country:'USA'},
+  {title:'On Editing', venue:'Stanchion', country:'USA'},
+  {title:'The Banality of Indifference', venue:'Stanchion', country:'USA'},
+  {title:'The Day Before the Party', venue:'The Pierian', country:'USA'},
+  {title:'What Vonnegut meant by foma; Of the Lost Things I Read and Forgot About', venue:'Chandrabhāgā', country:'India'},
+  {title:'Mahanadi', venue:'Doubleback Review', country:'USA'},
+  {title:'A Song for Sonagachi', venue:'Porch Literary Magazine', country:'Indonesia'},
+  {title:'Reflections Upon Visiting the Old Cemetery in Roorkee; The Infidel; The Barrel', venue:'Close Encounters in War Journal', country:'Italy'},
+  {title:'Dream Publication; Resurgence; A Silent Street Sermon; Replay; Poets Anonymous', venue:'Outlook', country:'India'},
+  {title:'Inheritance', venue:'The Bayou Review, University of Houston-Downtown', country:'USA'},
+  {title:'The thing with thunderbolts', venue:'The Wee Sparrow Poetry Press', country:'Spain'},
+  {title:'The Boy Next Door', venue:'Ink Sweat & Tears', country:'England'},
+  {title:"Where I'm Writing From; Crash Course", venue:'Muse India', country:'India'},
+  {title:'Leap', venue:'Paratextos', country:'Mexico'},
+  {title:'Exchange; Cusp; Delhi', venue:'San Antonio Review', country:'Uruguay'},
+  {title:'Essential Services', venue:'Roi Fainéant Press', country:'USA'},
+  {title:'Morning; Scrutiny; Happily Ever After', venue:'Setu', country:'USA'},
+  {title:'How to come back from the dead', venue:'The Martello Journal', country:'Ireland'},
+  {title:'Palate; Generation Gap', venue:'Dreich Planet #1 India (ed. Sanjeev Sethi, Hybriddreich)', country:'Scotland'},
+  {title:'Home', venue:'Paddler Press', country:'Canada'},
+  {title:'Cavities; Circle; Supposedly Stolen Lives', venue:'A Thin Slice of Anxiety', country:'USA'},
+  {title:'Resident Alien', venue:'The Chakkar', country:'India', link:'https://www.thechakkar.com/home/residentalien'},
+  {title:'Bookkeeping', venue:'miniMag', country:'China / Thailand'},
+  {title:'two haiku', venue:'The Asahi Shimbun', country:'Japan'},
+  {title:'बड़े लोगों की खिड़कियाँ', venue:'प्रतिज्ञान प्रकाशन', country:'भारत'},
+  {title:'कैशबैक', venue:'प्रतिज्ञान प्रकाशन', country:'भारत'},
+  {title:'स्पर्शरेखा; अंगूठी; संभावनाएं; किश्तें', venue:'मैं — सूक्ष्म, प्यासा, मुखौटा (प्रतिज्ञान प्रकाशन)', country:'भारत'},
+  {title:"The Curious Case of François Bereaud's Belly Button", venue:'MEARI', country:'USA'},
+  {title:'Dear Poet', venue:'JAKE', country:'USA'},
+  {title:'Portrait of the Artist as a Lover; Reflections Upon Visiting the Old Cemetery in Roorkee; On Writing; On Reading; Falling in Love', venue:'The Piker Press', country:'USA'},
+  {title:'The Infidel', venue:"The Bitchin' Kitsch", country:'USA'},
+  {title:'Reflections Upon Visiting the Old Cemetery in Roorkee', venue:'All My Relations', country:'USA'},
+  {title:'Mahanadi; Reflections Upon Visiting the Old Cemetery in Roorkee; Essential Services', venue:'Amity: Peace Poems (ed. Sahana Ahmed, Hawakal)', country:'India'},
+  {title:'Probability Theory; On Love; The Life and Times of Suku and Dukhu', venue:'Wives (ed. Ankit Raj Ojha, Hawakal)', country:'India'},
+  {title:'The Life and Times of Suku and Dukhu', venue:'Roi Fainéant Press', country:'USA'},
+  {title:'How to tame your dragons; Dream Publication; The Boy Next Door; Morning', venue:'Dreich', country:'Scotland'},
+  {title:'On Reading; On Writing; Portrait of the Artist as a Lover; Replay; Notification; Poets Anonymous', venue:'Dreich', country:'Scotland'},
+  {title:'Bookkeeping; Of Humans; Inheritance; For Papa; Resurgence; On Love', venue:'Dreich', country:'Scotland'},
+  {title:'Circle; The Barrel; The Infidel', venue:'Dreich', country:'Scotland'},
+  {title:'Halāhal', venue:'Dreich', country:'Scotland'},
+  {title:'Portrait of a Lady Taken Too Soon', venue:'Brave Voices Magazine', country:'USA'},
+  {title:'Notification', venue:'Loft Books', country:'England'},
+  {title:'Twitterature Review', venue:'Loft Books', country:'England'},
+  {title:"Rorschach's Journal", venue:'Cajun Mutt Press', country:'USA'},
+  {title:'No, Thanks!', venue:'Trouvaille Review', country:'USA'},
+  {title:'Pride', venue:'Streetcake Magazine', country:'England'},
+  {title:'Dinner tastes better than philosophy; I am spending myself in instalments; Generation Gap', venue:'Roi Fainéant Press', country:'USA'},
+  {title:'Every time I get my pump broken', venue:'Bullshit Lit', country:'USA'},
+  {title:'Manufactured Love', venue:'Discretionary Love', country:'USA'},
+];
+
+const academicWritings = [
+  {title:"The Hero at a Thousand Places: Kurt Vonnegut's Slaughterhouse-Five as Anti-Monomyth", venue:'Critique: Studies in Contemporary Fiction, Routledge'},
+  {title:'"Playing God, Are We?": The Cosmogonic Concoction in Kurt Vonnegut\u2019s Galápagos', venue:'Critique: Studies in Contemporary Fiction, Routledge'},
+  {title:"Dissecting the Doubtful Darwin: Kurt Vonnegut's Humanist Posthumanism in Galápagos", venue:'Scrutiny2: Issues in English Studies in Southern Africa, Routledge'},
+  {title:'Finding "Bluebeard" in Kurt Vonnegut\u2019s Bluebeard', venue:'ANQ: A Quarterly Journal of Short Articles, Notes and Reviews, Routledge'},
+  {title:'"Trick or Treat!": The Trickster Figure in God Bless You, Mr Rosewater and Slapstick', venue:'The Explicator, Routledge'},
+  {title:'The Painter and the Muse: Archetypes, Complexes and the Anti-Jungian Quest for Mother in Bluebeard', venue:'Partial Answers: Journal of Literature and the History of Ideas, Johns Hopkins University Press'},
+  {title:'Sermons on Joint: Bob Marley, Bokonon and the Religio-lyrical Affair with State Apparatuses', venue:'Dogmas in Literature and Literary Missionary (ed. Önder Çakırtaş), Vernon Press'},
+];
+
+const reviews = [
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Abhik Ganguly, Scroll.in', country:'India'},
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Soumashree Sarkar, The Wire', country:'India'},
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Hanna Nielson, The Belfast Review', country:'Northern Ireland'},
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Pradip Mondal, Cha: An Asian Literary Journal', country:'Hong Kong'},
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Wani Nazir, Matchbox by Usawa', country:'India'},
+  {title:'Review of The Bare Bones Book of Humour', venue:'by Namrata, Kitaab', country:'Singapore'},
+  {title:'Review of Pinpricks', venue:'by Pritikana Karmakar, Tint Journal', country:'Austria'},
+  {title:'Review of Pinpricks', venue:'by Shivalika Agarwal, Outlook', country:'India'},
+  {title:'Review of Pinpricks', venue:'by Shyamasri Maji, Kitaab', country:'Singapore'},
+  {title:'Review of Wives', venue:'by Chitra Gopalakrishnan, Different Truths', country:'India'},
+  {title:'Preview of Wives', venue:'by Somudranil Sarkar, Café Dissensus', country:'India'},
+];
+
+const interviews = [
+  {date:'2023', title:'Daniel Clark in conversation with Ankit Raj Ojha', outlet:'Winner, Briefly Think Essay Prize 2023 · Briefly Write, England'},
+  {date:'—', title:'The Magic of Maths and Science', outlet:'with Neil D\u2019Silva, Ankit Raj Ojha and Stuart Gibbs, moderated by Gennia Nuh · Tell Me Your Story: A Koral Dasgupta Project, India'},
+  {date:'—', title:'"A Word?" Wednesday with Kellie Scott-Reed and Ankit Raj Ojha', outlet:'Roi Fainéant Press, USA'},
+  {date:'—', title:'Ankush Banerjee in conversation with Ankit Raj Ojha', outlet:'Matchbox by Usawa, India'},
+  {date:'—', title:'Chitra Gopalakrishnan in conversation with Ankit Raj Ojha', outlet:'The Wise Owl, India'},
+  {date:'—', title:'Sahana Ahmed in conversation with Ankit Raj Ojha', outlet:'Bare Bones Publishing, India'},
+  {date:'S2E29', title:'Bookbot Theory — How Literary Magazines Shape Author Branding', outlet:'Singapore (YouTube · Spotify · Amazon Music)'},
+  {date:'—', title:'Suchita Senthil Kumar in conversation with the editors of The Hooghly Review', outlet:'Zhagaram Literary Magazine, India'},
+  {date:'—', title:'Six Questions For… with Jim Harrington', outlet:'USA'},
+];
+
+const otherMedia = [
+  {title:'Palate', venue:'Illustrated by Jason Novak', country:''},
+  {title:'The Boy Next Door', venue:'Worcestershire Acute Hospitals Charity Poetry Anthology: Hope & Joy', country:'England'},
+  {title:'Home', venue:'One Minute Poems: An Audio Anthology, Rancid Idols Productions', country:'Northern Ireland'},
+  {title:'Review of Dreich Planet #1 India (ed. Sanjeev Sethi)', venue:'by Leena Chandorkar, Indian Literature', country:'India'},
+  {title:'Review of Dreich Planet #1 India (ed. Sanjeev Sethi)', venue:'by Somudranil Sarkar, Café Dissensus', country:'India'},
+  {title:'Winner, Briefly Think Essay Prize 2023', venue:'for "Becoming Poetry" · Briefly Write', country:'England'},
+  {title:'Finalist, Sundress 2023 Broadside Contest', venue:'for "Span" · Sundress Publications', country:'USA'},
+  {title:'Nominated, The Pushcart Prize 2024', venue:'for "How to tame your dragons"', country:'USA'},
+  {title:"Nominated, Sundress Publications' Best of the Net 2025", venue:'for "How to tame your dragons"', country:'USA'},
+];
+
+const blurbs = [
+  {title:'Drench Me in Silver', venue:'by Saraswati Nagpal, Black Bough Poetry', country:'Wales'},
+  {title:'Sudden Shadows', venue:'by James Lilliefors, Finishing Line Press', country:'USA'},
+  {title:'And/Or', venue:'by Bob King, Finishing Line Press', country:'USA'},
+  {title:'San Diego Stories', venue:'by François Bereaud, Cowboy Jamboree Press', country:'USA'},
+  {title:'Flash Fusion: A Selection of Stories, Interviews and Prompts from Writers of South Asian Heritage', venue:'ed. Susmita Bhattacharya, Anita Goveas and Farhana Khalique, Dahlia Books', country:'England'},
+  {title:'Grieving Hope', venue:'ed. Diane Gottlieb, ELJ Editions', country:'USA'},
 ];
 
 // ---------- LAZY-LOAD BOOK COVERS (heavy external images, deferred until near view) ----------
@@ -2150,61 +2317,57 @@ function observeReveals(root){
 }
 observeReveals();
 
-// ---------- RENDER BIBLIOGRAPHY ----------
-const cardGrid = document.getElementById('cardGrid');
-const typeLabels = {poem:'Poetry', fiction:'Fiction', essay:'Essay / Review', interview:'Interview / Media'};
-
-function renderCards(filter){
-  cardGrid.innerHTML = '';
-  const list = filter === 'all' ? publications : publications.filter(p => p.type === filter);
+// ---------- RENDER PUBLICATIONS (reused for every card-grid category) ----------
+function renderCategory(containerId, list, countId){
+  const container = document.getElementById(containerId);
+  if (!container) return;
   list.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'pub-card reveal';
     card.innerHTML = `
       <span class="pub-index">No. ${String(i + 1).padStart(2, '0')}</span>
-      <div class="pub-top">
-        <span class="pub-tag">${typeLabels[p.type]}</span>
-        <span class="pub-year">${p.year}</span>
-      </div>
       <div class="pub-title">${p.title}</div>
-      <div class="pub-venue">${p.venue} <span class="country">· ${p.country}</span></div>
+      <div class="pub-venue">${p.venue}${p.country ? ` <span class="country">· ${p.country}</span>` : ''}</div>
       ${p.link ? `<a class="pub-link" href="${p.link}" target="_blank" rel="noopener">Read piece →</a>` : ''}
     `;
-    cardGrid.appendChild(card);
+    container.appendChild(card);
   });
-  document.getElementById('bibCount').textContent = `${list.length} works shown`;
-  observeReveals(cardGrid);
+  if (countId){
+    const countEl = document.getElementById(countId);
+    if (countEl) countEl.textContent = `${list.length} works`;
+  }
+  observeReveals(container);
 }
-renderCards('all');
+renderCategory('cardGrid-fiction', fictionNonfiction, 'count-fiction');
+renderCategory('cardGrid-essays', notesEssays, 'count-essays');
+renderCategory('cardGrid-translations', translations, 'count-translations');
+renderCategory('cardGrid-poetry', poetry, 'count-poetry');
+renderCategory('cardGrid-reviews', reviews);
+renderCategory('cardGrid-other-media', otherMedia);
+renderCategory('cardGrid-blurbs', blurbs);
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active');
-      b.setAttribute('aria-pressed', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-pressed', 'true');
-    renderCards(btn.dataset.filter);
-  });
-});
+const pubCountEl = document.getElementById('pubCount');
+if (pubCountEl){
+  const total = fictionNonfiction.length + notesEssays.length + translations.length + poetry.length + academicWritings.length;
+  pubCountEl.textContent = `${total}+ works across twenty countries`;
+}
 
-// ---------- RENDER ACADEMIC TABLE ----------
+// ---------- RENDER ACADEMIC WRITINGS TABLE ----------
 const academicBody = document.getElementById('academicBody');
-academic.forEach(a => {
+academicWritings.forEach(a => {
   const tr = document.createElement('tr');
   tr.innerHTML = `
     <td class="pt-title">${a.title}</td>
     <td class="pt-venue">${a.venue}</td>
-    <td class="pt-year">${a.year}</td>
-    <td class="pt-cite">${a.cite > 0 ? a.cite : '—'}</td>
   `;
   academicBody.appendChild(tr);
 });
+const countAcademicEl = document.getElementById('count-academic');
+if (countAcademicEl) countAcademicEl.textContent = `${academicWritings.length} works`;
 
-// ---------- RENDER PRESS ----------
+// ---------- RENDER INTERVIEWS ----------
 const pressList = document.getElementById('pressList');
-press.forEach(p => {
+interviews.forEach(p => {
   const item = document.createElement('div');
   item.className = 'press-item';
   item.innerHTML = `
@@ -2216,6 +2379,63 @@ press.forEach(p => {
     <div></div>
   `;
   pressList.appendChild(item);
+});
+
+// ---------- PUBLICATIONS ACCORDION (smooth height + fade/slide, reuses existing markup) ----------
+const pubReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.pub-category').forEach(details => {
+  const summary = details.querySelector('summary');
+  const body = details.querySelector('.pub-category-body');
+  if (!summary || !body) return;
+
+  summary.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (details.classList.contains('is-animating')) return;
+    if (pubReduceMotion){ details.open = !details.open; return; }
+    details.open ? closeCategory(details, body) : openCategory(details, body);
+  });
+
+  function openCategory(details, body){
+    details.classList.add('is-animating');
+    details.open = true;
+    body.style.transition = 'none';
+    body.style.height = '0px';
+    body.style.opacity = '0';
+    body.style.transform = 'translateY(-6px)';
+    const target = body.scrollHeight;
+    // force reflow so the browser registers the 0px start before animating
+    void body.offsetHeight;
+    body.style.transition = 'height .38s cubic-bezier(.2,.6,.2,1), opacity .3s ease .04s, transform .32s ease .04s';
+    body.style.height = target + 'px';
+    body.style.opacity = '1';
+    body.style.transform = 'translateY(0)';
+    body.addEventListener('transitionend', function onEnd(e){
+      if (e.propertyName !== 'height') return;
+      body.style.height = 'auto';
+      body.style.transition = '';
+      details.classList.remove('is-animating');
+      body.removeEventListener('transitionend', onEnd);
+    });
+  }
+
+  function closeCategory(details, body){
+    details.classList.add('is-animating');
+    const start = body.scrollHeight;
+    body.style.height = start + 'px';
+    body.style.transition = 'none';
+    void body.offsetHeight;
+    body.style.transition = 'height .32s cubic-bezier(.2,.6,.2,1), opacity .22s ease, transform .22s ease';
+    body.style.height = '0px';
+    body.style.opacity = '0';
+    body.style.transform = 'translateY(-6px)';
+    body.addEventListener('transitionend', function onEnd(e){
+      if (e.propertyName !== 'height') return;
+      details.open = false;
+      details.classList.remove('is-animating');
+      body.style.transition = '';
+      body.removeEventListener('transitionend', onEnd);
+    });
+  }
 });
 
 // ---------- NAV TOGGLE ----------
@@ -2379,17 +2599,19 @@ if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
   const cursorDot = document.createElement('div');
   cursorDot.className = 'ink-cursor';
   document.body.appendChild(cursorDot);
-  window.addEventListener('mousemove', (e) => {
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-  });
 
   // faint trailing bead of ink, lagging slightly behind the nib
   const trailDot = document.createElement('div');
   trailDot.className = 'ink-trail';
   document.body.appendChild(trailDot);
+
   let tx = 0, ty = 0, mx = 0, my = 0;
-  window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  window.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    cursorDot.style.left = mx + 'px';
+    cursorDot.style.top = my + 'px';
+  }, {passive:true});
+
   (function driftTrail(){
     tx += (mx - tx) * 0.12;
     ty += (my - ty) * 0.12;
@@ -2504,12 +2726,12 @@ if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
       geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
       const material = new THREE.PointsMaterial({
-        color: 0xC6862E,
+        color: 0x9C6A1F,
         size: 2.1,
         transparent: true,
-        opacity: 0.32,
+        opacity: 0.4,
         depthWrite: false,
-        blending: THREE.AdditiveBlending
+        blending: THREE.NormalBlending
       });
 
       points = new THREE.Points(geometry, material);
