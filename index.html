@@ -16,7 +16,10 @@
 <meta name="twitter:description" content="Poet, editor, translator, and scholar, published across twenty countries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <title>Ankit Raj Ojha — Poet · Editor · Translator · Scholar</title>
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -248,72 +251,6 @@ p{text-wrap:pretty;}
   margin-top:4px;
 }
 
-/* ---------- CINEMATIC HERO INTRO (runs once, signature intro only) ---------- */
-.hero-intro{
-  position:absolute;
-  inset:0;
-  z-index:5;
-  background:var(--paper);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  transition:opacity 1.1s ease, visibility 1.1s ease;
-}
-.hero-intro.hero-intro-hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-.hero-intro-line{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:clamp(18px, 3vw, 26px);
-  color:var(--ink-soft);
-  letter-spacing:0.02em;
-  min-height:1.4em;
-}
-.hero-intro-name{
-  font-family:'Fraunces', serif;
-  font-style:italic;
-  font-weight:500;
-  font-size:clamp(30px, 5vw, 52px);
-  color:var(--navy);
-  margin-top:8px;
-  opacity:0;
-  transform:translateY(10px);
-  transition:opacity 1s ease, transform 1s ease;
-}
-.hero-intro-name.is-visible{opacity:1; transform:translateY(0);}
-.hero-intro-roles{
-  margin-top:18px;
-  font-family:'IBM Plex Mono', monospace;
-  font-size:12px;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:var(--rust);
-  opacity:0;
-  transition:opacity 1.2s ease;
-}
-.hero-intro-roles.is-visible{opacity:1;}
-.hero-intro-cursor{
-  display:inline-block;
-  width:2px;
-  height:1em;
-  background:var(--ink);
-  margin-left:2px;
-  vertical-align:middle;
-  animation:hero-blink 0.9s steps(1) infinite;
-}
-@keyframes hero-blink{
-  0%, 49%{opacity:1;}
-  50%, 100%{opacity:0;}
-}
-.hero-content{
-  opacity:0;
-  transform:translateY(14px);
-  transition:opacity 1.1s ease, transform 1.1s ease;
-}
-.hero-content.is-visible{opacity:1; transform:translateY(0);}
 
 /* ---------- SECTION SHELL ---------- */
 section{padding:132px 0;}
@@ -383,9 +320,11 @@ section:not(.recognition)::after{
 .about-text{max-width:72ch;}
 .about-text p{margin:0 0 18px; color:var(--ink-soft); font-size:17.5px;}
 .about-text p:first-child{
-  font-size:21px;
-  color:var(--ink);
-  font-family:'Newsreader', serif;
+    margin:0 0 18px;
+    color:var(--ink-soft);
+    font-size:17.5px;
+    font-family:'Libre Baskerville', serif;
+    font-weight:400;
 }
 .facts{
   margin-top:36px;
@@ -455,8 +394,9 @@ section:not(.recognition)::after{
   color:var(--rust);
   margin-bottom:8px;
 }
-.book-title{
-  font-family:'Fraunces', serif;
+.book-title{    
+  font-family:'Libre Baskerville', serif;
+  font-weight:700;
   font-style:italic;
   font-weight:500;
   font-size:21px;
@@ -1416,87 +1356,6 @@ section{padding:168px 0;}
 .book:hover .book-ribbon{transform:translateY(3px) rotate(-2deg);}
 
 
-/* ---- Discoveries: margin notes, coffee ring, library stamp, pressed flower ---- */
-.margin-note{
-  position:absolute;
-  font-family:'Caveat', cursive;
-  font-size:19px;
-  color:var(--rust);
-  opacity:0.72;
-  line-height:1.15;
-  pointer-events:none;
-  transform:rotate(-4deg);
-}
-.margin-note::after{
-  content:"";
-  position:absolute; left:-4px; right:-6px; bottom:-3px;
-  height:6px;
-  border-bottom:1.5px dashed rgba(161,61,44,0.45);
-}
-.coffee-ring{
-  position:absolute;
-  width:86px; height:86px;
-  border-radius:50%;
-  border:2.5px solid rgba(120,78,32,0.14);
-  box-shadow:0 0 0 5px rgba(120,78,32,0.045), inset 0 0 10px rgba(120,78,32,0.06);
-  pointer-events:none;
-}
-.library-stamp{
-  position:absolute;
-  width:118px; height:118px;
-  border:2px solid rgba(31,51,80,0.4);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center;
-  font-family:'IBM Plex Mono', monospace;
-  font-size:9.5px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:rgba(31,51,80,0.45);
-  transform:rotate(-14deg);
-  mix-blend-mode:multiply;
-  pointer-events:none;
-}
-.library-stamp::before{
-  content:"";
-  position:absolute; inset:6px;
-  border:1px dashed rgba(31,51,80,0.35);
-  border-radius:50%;
-}
-.pressed-flower{
-  position:absolute;
-  width:58px; height:58px;
-  opacity:0.5;
-  pointer-events:none;
-  transform:rotate(8deg);
-}
-
-/* ---- Closing page: footer becomes the last leaf of the book ---- */
-.contact{position:relative;}
-.contact::before{
-  content:"";
-  position:absolute; inset:0 0 auto 0;
-  height:64px;
-  background:linear-gradient(180deg, rgba(28,26,23,0.35), transparent);
-  pointer-events:none;
-}
-.finis-seal{opacity:0; transform:rotate(-8deg) scale(0.7); transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1); cursor:pointer;}
-.finis-seal.is-pressed{opacity:1; transform:rotate(-8deg) scale(1);}
-.finis-note{
-  text-align:center;
-  font-family:'Caveat', cursive;
-  font-size:15px;
-  color:rgba(239,232,216,0.55);
-  height:0;
-  overflow:hidden;
-  opacity:0;
-  transition:opacity .5s ease;
-}
-.finis-note.is-shown{height:auto; opacity:1; margin-bottom:8px;}
-
-@media (prefers-reduced-motion: reduce){
-  .finis-seal{opacity:1; transform:rotate(-8deg) scale(1);}
-}
 
 /* ================= STAGE 5: FINAL POLISH — refinement only, no new sections ================= */
 
@@ -1729,31 +1588,18 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   <div class="hero-paper-texture" aria-hidden="true"></div>
   <canvas class="hero-dust-canvas" id="heroDustCanvas" aria-hidden="true"></canvas>
   <canvas class="ink-bloom-canvas" id="inkBloomCanvas" aria-hidden="true"></canvas>
-  <div class="hero-intro" id="heroIntro">
-    <div class="hero-intro-line" id="heroIntroLine"><span id="heroIntroText"></span><span class="hero-intro-cursor"></span></div>
-    <div class="hero-intro-name" id="heroIntroName">Ankit Raj Ojha</div>
-    <div class="hero-intro-roles" id="heroIntroRoles">Poet&nbsp;&nbsp;·&nbsp;&nbsp;Scholar&nbsp;&nbsp;·&nbsp;&nbsp;Editor&nbsp;&nbsp;·&nbsp;&nbsp;Translator</div>
-  </div>
+
   <div class="hero-inner hero-content">
-    <div class="eyebrow">Chapra, Bihar → Roorkee → Haryana</div>
-    <h1>Ankit Raj Ojha<br><em>writer, editor, translator and academic.</em></h1>
-    <p class="hero-sub">He is the author of <em>Pinpricks</em> (2022), editor of <em>Wives</em> (2023) and <em>The Bare Bones Book of Humour</em> (2026), and a founding editor at <em>The Hooghly Review</em>.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num">20</div><div class="lbl">Countries Published</div></div>
-      <div class="hero-stat"><div class="num">3</div><div class="lbl">Books Authored / Edited</div></div>
-      <div class="hero-stat"><div class="num">70+</div><div class="lbl">Poems, Stories &amp; Essays</div></div>
-      <div class="hero-stat"><div class="num">7</div><div class="lbl">Academic Publications</div></div>
-    </div>
+    <h1>Ankit Raj Ojha<br><em>
   </div>
 </header>
 <div class="chapter-divider" style="padding:0 0 0px;"><span class="rule"></span><span class="mark">❧</span><span class="rule"></span></div>
 
 <section id="about">
-  <div class="margin-note margin-note-about" style="top:210px; right:8px; max-width:13ch;" aria-hidden="true">still not sure<br>about "footnote"</div>
+
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Note on the Author</div>
         <h2>About</h2>
       </div>
     </div>
@@ -1764,14 +1610,7 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
         <p>Ankit is currently based in Karnal where he works as an assistant professor of English with the Department of Higher Education, Haryana. His poetry, short fiction, non-fiction and research articles have appeared in journals, magazines and anthologies based in twenty countries.</p>
         <p>Ankit is the author of <em>Pinpricks</em> (2022) and editor of <em>Wives</em> (2023) and <em>The Bare Bones Book of Humour</em> (2026). He is also a founding editor of the EBSCO-indexed magazine, <em>The Hooghly Review</em>, has guest-edited a volume of <em>Essence &amp; Critique: Journal of Literature and Drama Studies</em>, and is a consulting editor with several Routledge and Springer Nature journals.</p>
         <p>Ankit won the 2023 Briefly Think Essay Prize, was a finalist in the Sundress 2023 Broadside Contest, and made the top 1% in the Wergle Flomp Humour Poetry Contest 2023.</p>
-        <div class="facts">
-          <div class="fact"><span class="k">Based in</span><span class="v">Karnal, Haryana</span></div>
-          <div class="fact"><span class="k">PhD</span><span class="v">IIT Roorkee, English</span></div>
-          <div class="fact"><span class="k">Position</span><span class="v">Asst. Professor of English, DHE Haryana</span></div>
-          <div class="fact"><span class="k">Editor</span><span class="v">Founding Editor, The Hooghly Review</span></div>
-          <div class="fact"><span class="k">Consulting</span><span class="v">Routledge &amp; Springer Nature</span></div>
-          <div class="fact"><span class="k">Research</span><span class="v">Kurt Vonnegut, myth &amp; archetype, posthumanism</span></div>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -1781,10 +1620,8 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">On the Shelf</div>
         <h2>Books</h2>
       </div>
-      <div class="count">3 titles · 2022–2026</div>
     </div>
     <div class="books-grid">
       <a class="book book-1" href="https://www.hawakal.com/books/english-books/poetry-english-books/pinpricks-poems/" target="_blank" rel="noopener">
@@ -1796,7 +1633,7 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
           <div class="book-category">Poetry Collection</div>
           <div class="book-title">Pinpricks</div>
           <div class="book-meta">2022 · Hawakal Publishers</div>
-          <div class="book-desc">A first collection — poems about migration, memory, and the particular ache of a family that doesn't talk about the things it feels most. Reviewed in Kitaab, Tint Journal, and Outlook India.</div>
+          
           <span class="book-link">View Book →</span>
         </div>
       </a>
@@ -1808,7 +1645,7 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
           <div class="book-category">Edited Anthology</div>
           <div class="book-title">Wives</div>
           <div class="book-meta">2023 · Hawakal Publishers</div>
-          <div class="book-desc">An anthology he edited rather than wrote — poets writing toward a single shared theme. Reviewed in Different Truths and previewed in Café Dissensus.</div>
+          
           <span class="book-link">View Book →</span>
         </div>
       </a>
@@ -1821,7 +1658,7 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
           <div class="book-category">Edited Anthology</div>
           <div class="book-title">The Bare Bones Book of Humour</div>
           <div class="book-meta">2026 · Bare Bones Publishing</div>
-          <div class="book-desc">Twenty-four writers, eight countries, one shared conviction: that comedy is not a lesser form of seriousness. Edited and introduced by Ankit. Reviewed in Scroll.in, The Wire, Cha: An Asian Literary Journal, and more.</div>
+          
           <span class="book-link">View Book →</span>
         </div>
       </a>
@@ -1829,100 +1666,15 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
     <p style="margin-top:20px; font-size:12.5px; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;">Cover images via Hawakal Publishers and Bare Bones Publishing.</p>
   </div>
 </section>
-<section class="timeline-wrap">
-  <div class="container">
-    <div class="eyebrow timeline-label">A Working Life</div>
-    <div class="timeline">
-      <span class="timeline-stage">Engineer</span><span class="timeline-arrow">→</span>
-      <span class="timeline-stage">Researcher</span><span class="timeline-arrow">→</span>
-      <span class="timeline-stage">Poet</span><span class="timeline-arrow">→</span>
-      <span class="timeline-stage">Editor</span><span class="timeline-arrow">→</span>
-      <span class="timeline-stage">Scholar</span><span class="timeline-arrow">→</span>
-      <span class="timeline-stage is-current">Teacher</span>
-    </div>
-  </div>
-</section>
-<section class="recognition" style="padding:0;">
-  <div class="container" style="padding:0;">
-    <div class="rec-grid">
-      <div class="rec-item">
-        <div class="yr">2024 · Nomination</div>
-        <h4>Pushcart Prize</h4>
-        <p>For "How to tame your dragons," published in Porcupine Literary. A poem he still doesn't fully understand winning any attention, which might be why it did.</p>
-      </div>
-      <div class="rec-item">
-        <div class="yr">2025 · Nomination</div>
-        <h4>Best of the Net</h4>
-        <p>The same poem, nominated again. He is beginning to suspect it knows something he doesn't.</p>
-      </div>
-      <div class="rec-item">
-        <div class="yr">2023 · Top 1%</div>
-        <h4>Wergle Flomp Humour Poetry Contest</h4>
-        <p>An international contest for deliberately bad poetry. He entered on a dare, more or less, and ranked embarrassingly well. Lists it here next to the Pushcart on purpose.</p>
-      </div>
-      <div class="rec-item">
-        <div class="yr">2023 · Winner</div>
-        <h4>Briefly Think Essay Prize</h4>
-        <p>For "Becoming Poetry," published by Briefly Write. The one essay he'd ask someone to read first if they only had time for one.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="selected-works">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">A Few Worth Starting With</div>
-        <h2>Selected Works</h2>
-      </div>
-    </div>
-    <p class="selected-works-intro">A few worth starting with, out of the eighty or so.</p>
-    <div class="selected-works-list">
-      <div class="selected-work">
-        <span class="selected-work-year">2024</span>
-        <span class="selected-work-title">How to tame your dragons<span class="selected-work-venue">Porcupine Literary · USA</span></span>
-        <span class="selected-work-note">The one that keeps getting nominated for things</span>
-      </div>
-      <div class="selected-work">
-        <span class="selected-work-year">2023</span>
-        <span class="selected-work-title">Becoming Poetry<span class="selected-work-venue">Briefly Write · England</span></span>
-        <span class="selected-work-note">The essay he'd hand you first</span>
-      </div>
-      <div class="selected-work">
-        <span class="selected-work-year">2023</span>
-        <span class="selected-work-title">Halāhal<span class="selected-work-venue">The Honest Ulsterman · Northern Ireland</span></span>
-        <span class="selected-work-note">The one about the poison everyone in the myth has to drink, and does</span>
-      </div>
-      <div class="selected-work">
-        <span class="selected-work-year">2025</span>
-        <span class="selected-work-title">The Boys Who Lived<span class="selected-work-venue">The Brussels Review · Belgium</span></span>
-        <span class="selected-work-note">Fiction, and stranger than the poems</span>
-      </div>
-      <div class="selected-work">
-        <span class="selected-work-year">2025</span>
-        <span class="selected-work-title"><a href="https://www.pikerpress.com/article/10989/sonam-gupta-is-a-cheater" target="_blank" rel="noopener">Sonam Gupta Is a Cheater</a><span class="selected-work-venue">The Piker Press · USA</span></span>
-        <span class="selected-work-note">Proof he doesn't take titles seriously either</span>
-      </div>
-      <div class="selected-work">
-        <span class="selected-work-year">2023</span>
-        <span class="selected-work-title"><a href="https://www.thechakkar.com/home/residentalien" target="_blank" rel="noopener">Resident Alien</a><span class="selected-work-venue">The Chakkar · India</span></span>
-        <span class="selected-work-note">On being from somewhere, and then somewhere else</span>
-      </div>
-    </div>
-    <div class="selected-works-more"><a href="#publications">View the full bibliography ↓</a></div>
-  </div>
-</section>
+
 
 <section id="publications">
-  <div class="library-stamp" style="bottom:64px; right:40px;" aria-hidden="true">Ex Libris<br>A.R.O.<br>Est. 2021</div>
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">The Catalogue</div>
         <h2>Publications</h2>
       </div>
-      <div class="count" id="pubCount">works across twenty countries</div>
     </div>
 
     <details class="pub-category" open>
@@ -1968,58 +1720,14 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   </div>
 </section>
 
-<section id="editorial">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Behind the Desk</div>
-        <h2>Editorial Roles</h2>
-      </div>
-    </div>
-    <p class="academic-intro" style="margin-bottom:36px;">Editing, to him, is reading someone else's work as carefully as he'd want his own read — which turns out to be a different skill than writing, and one he's come to like just as much.</p>
-    <div class="roles-grid">
-      <div class="role-card">
-        <div class="eyebrow">Founding Editor</div>
-        <h4>The Hooghly Review</h4>
-        <p>An international magazine of literature, culture, and arts, founded and edited by Ankit.</p>
-      </div>
-      <div class="role-card">
-        <div class="eyebrow">Consulting Editor</div>
-        <h4>Routledge &amp; Springer Nature</h4>
-        <p>Consulting editor across academic journals and volumes published by both houses.</p>
-      </div>
-      <div class="role-card">
-        <div class="eyebrow">Guest Editor</div>
-        <h4>Essence and Critique</h4>
-        <p>Journal of Literature and Drama Studies, Bingöl Üniversitesi, Turkey.</p>
-      </div>
-      <div class="role-card">
-        <div class="eyebrow">Anthology Editor</div>
-        <h4>Wives (2023)</h4>
-        <p>Poetry anthology of emerging and established poets, Hawakal Publishers.</p>
-      </div>
-      <div class="role-card">
-        <div class="eyebrow">Anthology Editor</div>
-        <h4>The Bare Bones Book of Humour (2026)</h4>
-        <p>24 writers, 8 countries — a literary humour short story anthology.</p>
-      </div>
-      <div class="role-card">
-        <div class="eyebrow">Translator</div>
-        <h4>Cross-language work</h4>
-        <p>Translation work featured alongside contributions in Out of Print Magazine and elsewhere.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section id="reviews" style="background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">What Others Have Said</div>
         <h2>Reviews</h2>
       </div>
-      <div class="count" id="reviewsCount">of Pinpricks, Wives &amp; The Bare Bones Book of Humour</div>
     </div>
     <div class="card-grid" id="cardGrid-reviews"></div>
   </div>
@@ -2030,10 +1738,8 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">In His Own Words</div>
         <h2>Interviews</h2>
       </div>
-      <div class="count">Selected conversations</div>
     </div>
     <div class="press-list" id="pressList"></div>
   </div>
@@ -2043,10 +1749,8 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Elsewhere</div>
         <h2>Other Media &amp; Mentions</h2>
       </div>
-      <div class="count" id="otherMediaCount">Anthologies, audio, and a few nice surprises</div>
     </div>
     <div class="card-grid" id="cardGrid-other-media"></div>
   </div>
@@ -2056,27 +1760,22 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Words for Other People's Books</div>
         <h2>Blurbs</h2>
       </div>
-      <div class="count" id="blurbsCount">Praise written for other writers' work</div>
     </div>
     <div class="card-grid" id="cardGrid-blurbs"></div>
   </div>
 </section>
 
 <footer class="contact" id="contact">
-    <div class="finis-seal" id="finisSeal" tabindex="0" role="button" aria-label="A small discovery — press the seal">Finis</div>
-    <div class="finis-note" id="finisNote">turn the page, then?</div>
+    <div class="finis-seal" id="finisSeal" tabindex="0" role="button" aria-label="A small discovery — press the seal">Finish</div>
+
     <div class="contact-close-mark">❧</div>
   <div class="container">
     <div class="contact-inner">
       <div>
         <div class="eyebrow" style="color:var(--ochre);">Get in Touch</div>
-        <h2>If you've read this far, you already know more about me than most people bother to.</h2>
-        <p class="contact-sub">Get in touch about writing, editing, translation, or an argument about Vonnegut. I answer most emails, eventually, and always the funny ones first.</p>
-        <a class="contact-email" href="mailto:hello@ankitrajojha.com"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.2" y="4.5" width="15.6" height="11" rx="1.6" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M2.6 5.3l7.4 5.6 7.4-5.6" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>hello@ankitrajojha.com</a>
-        <div class="contact-epigraph">Every page ends somewhere. This one just ends here.</div>
+        <a class="contact-email" href="mailto:ankitrajojha@gmail.com"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.2" y="4.5" width="15.6" height="11" rx="1.6" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M2.6 5.3l7.4 5.6 7.4-5.6" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>ankitrajojha@gmail.com</a>
       </div>
       <ul class="social-list">
         <li><a href="https://twitter.com/ankit_raj01" target="_blank" rel="noopener"><span class="social-label"><svg class="social-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 2.5l15 15M17.5 2.5l-15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>X <span class="sr-only">— @ankit_raj01</span></span><span class="arrow">→</span></a></li>
@@ -2090,7 +1789,6 @@ a:focus-visible, button:focus-visible, .finis-seal:focus-visible, .filter-btn:fo
     </div>
     <div class="footer-bottom">
       <span>© 2026 Ankit Raj Ojha</span>
-      <span>Set in Fraunces &amp; Newsreader — from Chapra to Roorkee to Haryana</span>
     </div>
   </div>
 </footer>
@@ -2451,148 +2149,7 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 }));
 
 // ---------- CINEMATIC HERO INTRO (opening titles, not a loading screen — plays once, on a true top-of-page load) ----------
-(function heroIntro(){
-  const introEl = document.getElementById('heroIntro');
-  const lineWrap = document.getElementById('heroIntroLine');
-  const textSpan = document.getElementById('heroIntroText');
-  const nameEl = document.getElementById('heroIntroName');
-  const rolesEl = document.getElementById('heroIntroRoles');
-  const heroContent = document.querySelector('.hero-content');
-  const bloomCanvas = document.getElementById('inkBloomCanvas');
-  if (!introEl || !textSpan || !heroContent) return;
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // A load anywhere but the very top of the page — a refresh mid-scroll, a deep link,
-  // a hash target — is never treated as "opening night." The reader gets the page
-  // instantly, exactly where they left off, with no overlay to dismiss.
-  const atTop = (window.scrollY || window.pageYOffset || 0) < 40;
-  const shouldPlay = !reducedMotion && atTop;
-
-  // Shared with the Stage 4 ink-bloom canvas below, which must never animate
-  // on its own if the opening sequence itself isn't playing.
-  window.__playHeroIntro = shouldPlay;
-
-  function showInstantly(){
-    // Disable transitions just for this state change so "skip" truly means
-    // instant, not a fast fade — then hand transition control back afterward
-    // in case anything else ever relies on it.
-    [introEl, heroContent, bloomCanvas].forEach(el => { if (el) el.style.transition = 'none'; });
-    introEl.classList.add('hero-intro-hidden');
-    heroContent.classList.add('is-visible');
-    if (bloomCanvas) bloomCanvas.classList.add('is-done');
-    requestAnimationFrame(() => {
-      [introEl, heroContent, bloomCanvas].forEach(el => { if (el) el.style.transition = ''; });
-    });
-  }
-
-  if (!shouldPlay){
-    showInstantly();
-    return;
-  }
-
-  // ---- opening titles: lock the reader in place until the reveal completes ----
-  const htmlEl = document.documentElement;
-  htmlEl.style.overflow = 'hidden';
-  document.body.style.overflow = 'hidden';
-  function unlockScroll(){
-    htmlEl.style.overflow = '';
-    document.body.style.overflow = '';
-  }
-
-  // one soft typewriter key sound, one paper rustle, one carriage return — never reused elsewhere
-  let audioCtx;
-  function paperSound(){
-    try{
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      const duration = 0.4;
-      const bufferSize = Math.floor(audioCtx.sampleRate * duration);
-      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++){
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 1.6);
-      }
-      const noise = audioCtx.createBufferSource();
-      noise.buffer = buffer;
-      const filter = audioCtx.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.value = 1800;
-      filter.Q.value = 0.5;
-      const gain = audioCtx.createGain();
-      gain.gain.value = 0.045;
-      noise.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
-      noise.start();
-    }catch(e){}
-  }
-  function typeSound(){
-    try{
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-      o.type = 'square'; o.frequency.value = 1150 + Math.random() * 180;
-      g.gain.value = 0.02;
-      o.connect(g); g.connect(audioCtx.destination);
-      o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.03);
-      o.stop(audioCtx.currentTime + 0.04);
-    }catch(e){}
-  }
-  function carriageSound(){
-    try{
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-      o.type = 'triangle'; o.frequency.setValueAtTime(650, audioCtx.currentTime);
-      o.frequency.exponentialRampToValueAtTime(280, audioCtx.currentTime + 0.15);
-      g.gain.value = 0.03;
-      o.connect(g); g.connect(audioCtx.destination);
-      o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.18);
-      o.stop(audioCtx.currentTime + 0.2);
-    }catch(e){}
-  }
-
-  // the ink bloom (Stage 4, below) begins dissolving the instant this script runs —
-  // the paper sound fires in that same beat, so the wash and the rustle land together
-  paperSound();
-
-  const phrases = ['He writes.', 'He observes.', 'He remembers.'];
-  let phraseIndex = 0;
-
-  function typeText(text, cb){
-    let i = 0;
-    (function step(){
-      if (i <= text.length){
-        textSpan.textContent = text.slice(0, i);
-        if (i < text.length) typeSound();
-        i++;
-        setTimeout(step, 65);
-      } else { setTimeout(cb, 650); }
-    })();
-  }
-  function deleteText(text, cb){
-    let i = text.length;
-    (function step(){
-      if (i >= 0){
-        textSpan.textContent = text.slice(0, i);
-        i--;
-        setTimeout(step, 32);
-      } else { setTimeout(cb, 180); }
-    })();
-  }
-  function advance(){
-    if (phraseIndex < phrases.length){
-      const phrase = phrases[phraseIndex];
-      typeText(phrase, () => deleteText(phrase, () => { phraseIndex++; advance(); }));
-    } else {
-      carriageSound();
-      lineWrap.style.display = 'none';
-      nameEl.classList.add('is-visible');
-      setTimeout(() => rolesEl.classList.add('is-visible'), 500);
-      setTimeout(() => {
-        introEl.classList.add('hero-intro-hidden');
-        heroContent.classList.add('is-visible');
-        unlockScroll();
-      }, 2100);
-    }
-  }
-  setTimeout(advance, 500);
-})();
 
 // ---------- CUSTOM CURSOR (subtle ink dot, desktop only) ----------
 if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
